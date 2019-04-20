@@ -1,0 +1,15 @@
+{
+  "name": "personal-portfolio",
+  "version": "1.0.0",
+  "description": "A personal portfolio webpage.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch scss/styles.scss -o css/styles.css"
+  },
+  "author": "Oscar Fabiani",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

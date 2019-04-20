@@ -1,0 +1,155 @@
+
+
+body {
+  margin: 0;
+  text-align: center;
+}
+#navbar {
+  position: fixed;
+  top: 0;
+  height: 60px;
+  width: 100%;
+  background: #e0ebe8;
+  z-index: 999;
+}
+nav ul {
+  margin-top: 20px;
+  margin-bottom: 0;
+  margin-left: auto;
+  padding-left: 0;
+  width: 500px;
+}
+@media (max-width: 550px) {
+  nav ul {
+    width: 250px;
+  }
+}
+nav a {
+  color: #008080;
+  text-decoration: none;
+}
+nav a:hover {
+  color: green;
+}
+nav li {
+  display: inline;
+  padding: 0 50px;
+  font-size: 20px;
+}
+.border-right {
+  border-right: 1px solid;
+}
+@media (max-width: 550px) {
+  nav li {
+    padding: 0 10px;
+  }
+}
+
+/*Welcome section styling*/
+
+#welcome-section {
+  margin-top: 50px;
+  height: 100vh;
+  background: #e0ebe8;
+}
+#welcome-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#welcome-section h1 {
+  margin: 0;
+  font-size: 30px;
+  line-height: 10px;
+}
+#welcome-section p {
+  color: #008080;
+  font-size: 20px;
+  line-height: 10px;
+}
+
+/*Projects section styling*/
+
+#projects h1 {
+  margin: 0;
+  padding: 50px 0px;
+  color: #008080;
+  font-size: 30px;
+  font-weight: normal;
+}
+.project-title {
+  display: inline-block;
+  margin: 0 100px 50px 100px;
+  border: 2px solid lightblue;
+  height: 200px;
+  width: 250px;
+  color: #008080;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+  text-decoration: none;
+}
+.project-image {
+  border-bottom: 2px solid lightblue;
+  height: 160px;
+  width: 100%;
+}
+.show-all {
+  display: block;
+  margin: 25px auto 100px;
+  border: 2px solid #90C695;
+  border-radius: 5px;
+  height: 40px;
+  width: 200px;
+  background: #e0ebe8;
+  color: #008080;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 40px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.show-all:hover {
+  background: #e4f1fe;
+  color: green;
+}
+
+/*Contact section styling*/
+
+#contact {
+  background: #C8F7C5;
+  padding: 150px 0 150px;
+}
+#contact h1 {
+ margin: 0;
+ font-size: 35px;
+}
+#contact p {
+  margin: 0 0 100px 0;
+  font-size: 20px;
+}
+.sphere {
+  display: inline-block;
+  margin: 0 50px 50px 50px;
+  border: 1px solid #90C695;
+  border-radius: 50px;
+  height: 100px;
+  width: 100px;
+  background: #e0ebe8;
+  color: #008080;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 100px;
+  text-decoration: none;
+}
+.sphere:hover {
+  background: #E4F1FE;
+  color: green;
+}
+footer {
+  padding: 25px 0;
+  background: #22313F;
+  color: white;
+  font-size: 20px;
+  line-height: 50px;
+}

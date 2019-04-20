@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch scss/styles.scss -o css/styles.css"
+    "scss": "node-sass --watch scss/styles.scss -o css",
+    "say-hello": "echo 'Hello World'"
   },
   "author": "Oscar Fabiani",
   "license": "ISC",

@@ -1,13 +1,15 @@
 
 $color1: #e0ebe8;
 $color2: #008080;
+$color3: #90C695;
+$color4: #e4f1fe;
 
 html {
   font-size: 20px;
 }
 body {
   margin: 0;
-  text-align: center;
+  /*text-align: center;*/
 }
 
 h1, h2, h3, h4, p {
@@ -67,29 +69,39 @@ h1, h2, h3, h4, p {
 /*USING THIS WHILE TRYING TO FIGURE OUT HOW TO BEST SPACE BETWEEN SECTION AND SUPPORT LINKS */
 #projects-tab {
   height: 4em;
-  background-color: aquamarine;
+  background-color: violet;
 }
 
 
 /*Projects section styling*/
 
-#projects {
+#project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   h1 {
     margin-bottom: 2em;
     color: $color2;
     font-weight: normal;
   }
+  .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .project {
-    display: inline-block;
-    margin: 0 100px 50px 100px;
-    border: .2em solid lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3em 2em 3em;
+    border: .2em solid $color3;
     border-radius: .5em;
     color: $color2;
     text-decoration: none;
     .project-image {
       margin-bottom: .5em;
       padding: .5em;
-      border-bottom: .2em solid lightblue;
+      border-bottom: .2em solid $color3;
       height: 8em;
       width: 12em;
     }
@@ -98,22 +110,21 @@ h1, h2, h3, h4, p {
     }
   }
   .show-all {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 1em auto 5em;
-    border: 2px solid #90C695;
+    border: 2px solid $color3;
     border-radius: 5px;
     height: 40px;
     width: 200px;
-    background: #e0ebe8;
+    background: $color1;
     color: $color2;
-    font-size: 20px;
     font-weight: bold;
-    line-height: 40px;
     text-decoration: none;
-    cursor: pointer;
   }
   .show-all:hover {
-    background: #e4f1fe;
+    background: $color4;
     color: green;
   }
 }
@@ -141,7 +152,7 @@ h1, h2, h3, h4, p {
     margin: 0 2em 1em;
     height: 5em;
     width: 5em;
-    border: 1px solid #90C695;
+    border: 1px solid $color3;
     border-radius: 50px;
     background: $color1;
     color: $color2;
@@ -149,7 +160,7 @@ h1, h2, h3, h4, p {
     text-decoration: none;
   }
   .sphere:hover {
-    background: #E4F1FE;
+    background: $color4;
     color: green;
   }
 }

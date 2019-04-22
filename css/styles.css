@@ -3,7 +3,7 @@ html {
 
 body {
   margin: 0;
-  text-align: center; }
+  /*text-align: center;*/ }
 
 h1, h2, h3, h4, p {
   margin: 0; }
@@ -50,48 +50,54 @@ h1, h2, h3, h4, p {
 /*USING THIS WHILE TRYING TO FIGURE OUT HOW TO BEST SPACE BETWEEN SECTION AND SUPPORT LINKS */
 #projects-tab {
   height: 4em;
-  background-color: aquamarine; }
+  background-color: violet; }
 
 /*Projects section styling*/
-#projects h1 {
-  margin-bottom: 2em;
-  color: #008080;
-  font-weight: normal; }
-
-#projects .project {
-  display: inline-block;
-  margin: 0 100px 50px 100px;
-  border: .2em solid lightblue;
-  border-radius: .5em;
-  color: #008080;
-  text-decoration: none; }
-  #projects .project .project-image {
-    margin-bottom: .5em;
-    padding: .5em;
-    border-bottom: .2em solid lightblue;
-    height: 8em;
-    width: 12em; }
-  #projects .project .project-title {
-    margin-bottom: .5em; }
-
-#projects .show-all {
-  display: block;
-  margin: 1em auto 5em;
-  border: 2px solid #90C695;
-  border-radius: 5px;
-  height: 40px;
-  width: 200px;
-  background: #e0ebe8;
-  color: #008080;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 40px;
-  text-decoration: none;
-  cursor: pointer; }
-
-#projects .show-all:hover {
-  background: #e4f1fe;
-  color: green; }
+#project-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #project-section h1 {
+    margin-bottom: 2em;
+    color: #008080;
+    font-weight: normal; }
+  #project-section .projects {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
+  #project-section .project {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 3em 2em 3em;
+    border: 0.2em solid #90C695;
+    border-radius: .5em;
+    color: #008080;
+    text-decoration: none; }
+    #project-section .project .project-image {
+      margin-bottom: .5em;
+      padding: .5em;
+      border-bottom: 0.2em solid #90C695;
+      height: 8em;
+      width: 12em; }
+    #project-section .project .project-title {
+      margin-bottom: .5em; }
+  #project-section .show-all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1em auto 5em;
+    border: 2px solid #90C695;
+    border-radius: 5px;
+    height: 40px;
+    width: 200px;
+    background: #e0ebe8;
+    color: #008080;
+    font-weight: bold;
+    text-decoration: none; }
+  #project-section .show-all:hover {
+    background: #e4f1fe;
+    color: green; }
 
 /*Contact section styling*/
 #contact {
@@ -118,7 +124,7 @@ h1, h2, h3, h4, p {
     font-weight: bold;
     text-decoration: none; }
   #contact .sphere:hover {
-    background: #E4F1FE;
+    background: #e4f1fe;
     color: green; }
 
 footer {

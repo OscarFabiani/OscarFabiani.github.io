@@ -16,12 +16,17 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
+%flex-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 
 /*Navbar styling*/
 
 .navbar {
-  display: flex;
-  align-items: center;
+  @extend %flex-centered;
   justify-content: flex-end;
   position: fixed;
   height: 3em;
@@ -29,9 +34,7 @@ h1, h2, h3, h4, p {
   background: $color1;
   z-index: 999;
   ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
+    @extend %flex-centered;
     list-style-type: none;
     li {
       padding: 0 2.5em;
@@ -56,43 +59,33 @@ h1, h2, h3, h4, p {
 /*Welcome section styling*/
 
 #welcome-section {
-  display: flex;
+  @extend %flex-centered;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
   background: $color1;
   p {
     color: $color2;
   }
 }
-/*USING THIS WHILE TRYING TO FIGURE OUT HOW TO BEST SPACE BETWEEN SECTION AND SUPPORT LINKS */
-#projects-tab {
-  height: 4em;
-  background-color: violet;
-}
 
 
 /*Projects section styling*/
 
 #project-section {
-  display: flex;
+  @extend %flex-centered;
   flex-direction: column;
-  align-items: center;
   h1 {
-    margin-bottom: 2em;
+    margin: 3em 0 2em;
     color: $color2;
     font-weight: normal;
   }
   .projects {
-    display: flex;
-    justify-content: center;
+    @extend %flex-centered;
     flex-wrap: wrap;
   }
   .project {
-    display: flex;
+    @extend %flex-centered;
     flex-direction: column;
-    align-items: center;
     margin: 0 3em 2em 3em;
     border: .2em solid $color3;
     border-radius: .5em;
@@ -110,9 +103,7 @@ h1, h2, h3, h4, p {
     }
   }
   .show-all {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-centered;
     margin: 1em auto 5em;
     border: 2px solid $color3;
     border-radius: 5px;
@@ -132,23 +123,23 @@ h1, h2, h3, h4, p {
 /*Contact section styling*/
 
 #contact {
-  /*min-height: 100vh; TRY THIS INSTEAD OF PADDING*/
-  padding: 10em 0;
+  @extend %flex-centered;
+  flex-direction: column;
   background: #C8F7C5;
   h1 {
+    margin-top: 4em;
   }
    p {
     margin-bottom: 5em;
+    color: $color2;
   }
   .contact-links {
-    display: flex;
-    justify-content: center;
+    @extend %flex-centered;
     flex-wrap: wrap;
+    margin-bottom: 10em;
   }
   .sphere {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @extend %flex-centered;
     margin: 0 2em 1em;
     height: 5em;
     width: 5em;
@@ -167,6 +158,8 @@ h1, h2, h3, h4, p {
 
 
 footer {
+  @extend %flex-centered;
+  flex-direction: column;
   padding: 2em 0;
   background: #22313F;
   color: white;

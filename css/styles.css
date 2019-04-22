@@ -96,31 +96,36 @@ h1, h2, h3, h4, p {
 /*Contact section styling*/
 #contact {
   /*min-height: 100vh; TRY THIS INSTEAD OF PADDING*/
-  padding: 5em 0;
+  padding: 10em 0;
   background: #C8F7C5; }
   #contact p {
     margin-bottom: 5em; }
+  #contact .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; }
   #contact .sphere {
-    display: inline-block;
-    margin: 0 50px 50px 50px;
-    border: 1px solid #90C695;
-    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2em 1em;
     height: 5em;
     width: 5em;
+    border: 1px solid #90C695;
+    border-radius: 50px;
     background: #e0ebe8;
     color: #008080;
     font-weight: bold;
-    line-height: 100px;
     text-decoration: none; }
   #contact .sphere:hover {
     background: #E4F1FE;
     color: green; }
 
 footer {
-  padding: 25px 0;
+  padding: 2em 0;
   background: #22313F;
-  color: white;
-  font-size: 20px;
-  line-height: 50px; }
+  color: white; }
+  footer .blurb {
+    margin-bottom: 2em; }
 
 /*FIX SECTION LINKS*/

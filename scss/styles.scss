@@ -122,25 +122,30 @@ h1, h2, h3, h4, p {
 
 #contact {
   /*min-height: 100vh; TRY THIS INSTEAD OF PADDING*/
-  padding: 5em 0;
+  padding: 10em 0;
   background: #C8F7C5;
   h1 {
   }
    p {
     margin-bottom: 5em;
   }
-
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
   .sphere {
-    display: inline-block;
-    margin: 0 50px 50px 50px;
-    border: 1px solid #90C695;
-    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 2em 1em;
     height: 5em;
     width: 5em;
+    border: 1px solid #90C695;
+    border-radius: 50px;
     background: $color1;
     color: $color2;
     font-weight: bold;
-    line-height: 100px;
     text-decoration: none;
   }
   .sphere:hover {
@@ -151,11 +156,12 @@ h1, h2, h3, h4, p {
 
 
 footer {
-  padding: 25px 0;
+  padding: 2em 0;
   background: #22313F;
   color: white;
-  font-size: 20px;
-  line-height: 50px;
+  .blurb {
+    margin-bottom: 2em;
+  }
 }
 
 /*FIX SECTION LINKS*/

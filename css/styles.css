@@ -1,33 +1,30 @@
+html {
+  font-size: 20px; }
+
 body {
   margin: 0;
-  font-size: 20px;
   text-align: center; }
 
-h1 {
+h1, h2, h3, h4, p {
   margin: 0; }
 
 /*Navbar styling*/
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   position: fixed;
-  top: 0;
-  margin-bottom: 50px;
-  height: 60px;
+  height: 3em;
   width: 100%;
   background: #e0ebe8;
   z-index: 999; }
   .navbar ul {
-    margin-top: 20px;
-    margin-bottom: 0;
-    margin-left: auto;
-    padding-left: 0;
-    width: 500px; }
-    @media (max-width: 550px) {
-      .navbar ul {
-        width: 250px; } }
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
     .navbar ul li {
-      display: inline;
-      padding: 0 50px;
-      font-size: 20px; }
+      padding: 0 2.5em; }
       @media (max-width: 550px) {
         .navbar ul li {
           padding: 0 10px; } }
@@ -41,46 +38,45 @@ h1 {
 
 /*Welcome section styling*/
 #welcome-section {
-  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   background: #e0ebe8; }
-  #welcome-section .welcome-wrapper {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%); }
-    #welcome-section .welcome-wrapper h1 {
-      font-size: 2em;
-      line-height: 10px; }
-    #welcome-section .welcome-wrapper p {
-      color: #008080;
-      line-height: 10px; }
+  #welcome-section p {
+    color: #008080; }
+
+/*USING THIS WHILE TRYING TO FIGURE OUT HOW TO BEST SPACE BETWEEN SECTION AND SUPPORT LINKS */
+#projects-tab {
+  height: 4em;
+  background-color: aquamarine; }
 
 /*Projects section styling*/
 #projects h1 {
-  margin-bottom: 50px;
+  margin-bottom: 2em;
   color: #008080;
   font-weight: normal; }
 
-.project-title {
+#projects .project {
   display: inline-block;
   margin: 0 100px 50px 100px;
-  border: 2px solid lightblue;
-  height: 200px;
-  width: 250px;
+  border: .2em solid lightblue;
+  border-radius: .5em;
   color: #008080;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 25px;
   text-decoration: none; }
+  #projects .project .project-image {
+    margin-bottom: .5em;
+    padding: .5em;
+    border-bottom: .2em solid lightblue;
+    height: 8em;
+    width: 12em; }
+  #projects .project .project-title {
+    margin-bottom: .5em; }
 
-.project-image {
-  border-bottom: 2px solid lightblue;
-  height: 160px;
-  width: 100%; }
-
-.show-all {
+#projects .show-all {
   display: block;
-  margin: 25px auto 100px;
+  margin: 1em auto 5em;
   border: 2px solid #90C695;
   border-radius: 5px;
   height: 40px;
@@ -93,29 +89,26 @@ h1 {
   text-decoration: none;
   cursor: pointer; }
 
-.show-all:hover {
+#projects .show-all:hover {
   background: #e4f1fe;
   color: green; }
 
 /*Contact section styling*/
 #contact {
-  background: #C8F7C5;
-  padding: 150px 0; }
-  #contact h1 {
-    font-size: 1.7em; }
+  /*min-height: 100vh; TRY THIS INSTEAD OF PADDING*/
+  padding: 5em 0;
+  background: #C8F7C5; }
   #contact p {
-    margin-bottom: 100px;
-    font-size: 20px; }
+    margin-bottom: 5em; }
   #contact .sphere {
     display: inline-block;
     margin: 0 50px 50px 50px;
     border: 1px solid #90C695;
     border-radius: 50px;
-    height: 100px;
-    width: 100px;
+    height: 5em;
+    width: 5em;
     background: #e0ebe8;
     color: #008080;
-    font-size: 20px;
     font-weight: bold;
     line-height: 100px;
     text-decoration: none; }
@@ -129,3 +122,5 @@ footer {
   color: white;
   font-size: 20px;
   line-height: 50px; }
+
+/*FIX SECTION LINKS*/

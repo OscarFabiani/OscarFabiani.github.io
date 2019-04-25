@@ -6,6 +6,7 @@ $color4: #e4f1fe;
 
 html {
   font-size: 20px;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -36,6 +37,7 @@ h1, h2, h3, h4, p {
   ul {
     @extend %flex-centered;
     list-style-type: none;
+    user-select: none;
     li {
       padding: 0 2.5em;
       @media (max-width: 550px) {

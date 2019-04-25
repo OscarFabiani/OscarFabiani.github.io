@@ -6,7 +6,6 @@ $color4: #e4f1fe;
 
 html {
   font-size: 20px;
-  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -71,6 +70,7 @@ h1, h2, h3, h4, p {
   a {
     position: absolute;
     margin-top: 40vh;
+    font-weight: bold;
     text-decoration: none;
   }
 }

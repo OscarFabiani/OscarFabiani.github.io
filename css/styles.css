@@ -45,6 +45,10 @@ h1, h2, h3, h4, p {
   background: #e0ebe8; }
   #welcome-section p {
     color: #008080; }
+  #welcome-section a {
+    position: absolute;
+    margin-top: 40vh;
+    text-decoration: none; }
 
 /*Projects section styling*/
 #project-section {

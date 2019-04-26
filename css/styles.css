@@ -8,28 +8,32 @@ body {
 h1, h2, h3, h4, p {
   margin: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
 
 /*Navbar styling*/
 .navbar {
-  justify-content: flex-end;
+  justify-content: space-between;
   position: fixed;
   top: 0;
-  height: 3em;
+  height: 2em;
   width: 100%;
   background: #e0ebe8;
   z-index: 999; }
+  .navbar .home {
+    margin-left: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: #008080; }
+  .navbar .home:hover {
+    color: green; }
   .navbar ul {
     list-style-type: none;
     user-select: none; }
     .navbar ul li {
-      padding: 0 2.5em; }
-      @media (max-width: 550px) {
-        .navbar ul li {
-          padding: 0 10px; } }
+      padding: 0 5vw; }
       .navbar ul li a {
         color: #008080;
         text-decoration: none; }
@@ -45,18 +49,29 @@ h1, h2, h3, h4, p {
 #welcome-section {
   flex-direction: column;
   align-items: flex-end;
-  height: 91vh;
-  margin-top: 9vh;
-  background: url(/assets/long-crop6-resize1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: 60%;
-  background-position-y: 0%; }
+  height: 100vh;
+  background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover; }
   #welcome-section .welcome-text {
     flex-direction: column;
-    margin-right: 15vw; }
+    margin-right: 15vw;
+    font-size: 2.5vw; }
     #welcome-section .welcome-text p {
-      color: white; }
+      color: ghostwhite;
+      color: honeydew;
+      color: white;
+      color: mintcream; }
+    @media (max-width: 1100px) {
+      #welcome-section .welcome-text {
+        font-size: 3vw;
+        margin-right: 10vw; } }
+    @media (max-width: 900px) {
+      #welcome-section .welcome-text {
+        font-size: 4vw;
+        margin-right: 5vw; } }
+    @media (max-width: 650px) {
+      #welcome-section .welcome-text {
+        font-size: 4.5vw;
+        margin-right: 5vw; } }
   #welcome-section a {
     align-self: center;
     position: absolute;
@@ -64,18 +79,21 @@ h1, h2, h3, h4, p {
     color: white;
     font-weight: bold;
     text-decoration: none; }
-  @media (max-width: 700px) {
-    #welcome-section .welcome-text {
-      margin-right: 5vw; } }
   @media (max-height: 550px) {
     #welcome-section {
       font-size: .8em; } }
+
+/*About section styling*/
+#about-section {
+  background-color: #e0ebe8; }
+  #about-section .about-text {
+    margin: 2em 0; }
 
 /*Projects section styling*/
 #project-section {
   flex-direction: column; }
   #project-section h1 {
-    margin: 2em 0 2em;
+    margin: 2em 0;
     color: #008080;
     font-weight: normal; }
   #project-section .projects {
@@ -164,6 +182,6 @@ footer {
     font-weight: bold;
     text-decoration: none; }
   footer .blurb {
-    margin-bottom: 2em; }
+    margin: 0 2em 2em 2em; }
 
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, REBUILD WITH FLEXBOX/GRID, ADD FONT STYLE */

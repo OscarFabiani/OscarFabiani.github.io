@@ -27,22 +27,28 @@ h1, h2, h3, h4, p {
 
 .navbar {
   @extend %flex-centered;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: fixed;
   top: 0;
-  height: 3em;
+  height: 2em;
   width: 100%;
   background: $color1;
   z-index: 999;
+  .home {
+    margin-left: 1em;
+    text-decoration: none;
+    font-weight: bold;
+    color: $color2;
+  }
+  .home:hover {
+    color: green;
+  }
   ul {
     @extend %flex-centered;
     list-style-type: none;
     user-select: none;
     li {
-      padding: 0 2.5em;
-      @media (max-width: 550px) {
-        padding: 0 10px;
-      }
+      padding: 0 5vw;
       a {
         color: $color2;
         text-decoration: none;
@@ -67,19 +73,30 @@ h1, h2, h3, h4, p {
   @extend %flex-centered;
   flex-direction: column;
   align-items: flex-end;
-  height: 91vh;
-  margin-top: 9vh;
-  background: url(/assets/long-crop6-resize1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: 60%;
-  background-position-y: 0%;
+  height: 100vh;
+  background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover;
   .welcome-text {
     @extend %flex-centered;
     flex-direction: column;
     margin-right: 15vw;
+    font-size: 2.5vw;
     p {
+      color: ghostwhite;
+      color: honeydew;
       color: white;
+      color: mintcream;
+    }
+    @media (max-width: 1100px) {
+        font-size: 3vw;
+        margin-right: 10vw;
+    }
+    @media (max-width: 900px) {
+        font-size: 4vw;
+        margin-right: 5vw;
+    }
+    @media (max-width: 650px) {
+        font-size: 4.5vw;
+        margin-right: 5vw;
     }
   }
   a {
@@ -90,16 +107,21 @@ h1, h2, h3, h4, p {
     font-weight: bold;
     text-decoration: none;
   }
-  @media (max-width: 700px) {
-    .welcome-text {
-      margin-right: 5vw;
-    }
-  }
   @media (max-height: 550px) {
     font-size: .8em;
   }
 }
 
+
+/*About section styling*/
+
+#about-section {
+  @extend %flex-centered;
+  background-color: $color1;
+  .about-text {
+    margin: 2em 0;
+  }
+}
 
 
 /*Projects section styling*/
@@ -108,7 +130,7 @@ h1, h2, h3, h4, p {
   @extend %flex-centered;
   flex-direction: column;
   h1 {
-    margin: 2em 0 2em;
+    margin: 2em 0;
     color: $color2;
     font-weight: normal;
   }
@@ -223,7 +245,7 @@ footer {
     text-decoration: none;
   }
   .blurb {
-    margin-bottom: 2em;
+    margin: 0 2em 2em 2em;
   }
 }
 

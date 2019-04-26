@@ -29,6 +29,7 @@ h1, h2, h3, h4, p {
   @extend %flex-centered;
   justify-content: flex-end;
   position: fixed;
+  top: 0;
   height: 3em;
   width: 100%;
   background: $color1;
@@ -64,8 +65,13 @@ h1, h2, h3, h4, p {
 #welcome-section {
   @extend %flex-centered;
   flex-direction: column;
-  height: 100vh;
-  background: $color1;
+  height: 91vh;
+  width: 100vw;
+  margin-top: 9vh;
+  background: url(/assets/wide-crop2-resize1.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  background-size: cover;
   p {
     color: $color2;
   }
@@ -77,6 +83,14 @@ h1, h2, h3, h4, p {
   }
 }
 
+@media (max-width: 600px) {
+  #welcome-section {
+    background: url(/assets/long-crop1-resize1.jpg);
+    background-repeat: no-repeat;
+    background-position: top, center;
+    background-size: cover;
+  }
+}
 
 /*Projects section styling*/
 

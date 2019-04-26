@@ -17,6 +17,7 @@ h1, h2, h3, h4, p {
 .navbar {
   justify-content: flex-end;
   position: fixed;
+  top: 0;
   height: 3em;
   width: 100%;
   background: #e0ebe8;
@@ -43,8 +44,13 @@ h1, h2, h3, h4, p {
 /*Welcome section styling*/
 #welcome-section {
   flex-direction: column;
-  height: 100vh;
-  background: #e0ebe8; }
+  height: 91vh;
+  width: 100vw;
+  margin-top: 9vh;
+  background: url(/assets/wide-crop2-resize1.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom, center;
+  background-size: cover; }
   #welcome-section p {
     color: #008080; }
   #welcome-section a {
@@ -52,6 +58,13 @@ h1, h2, h3, h4, p {
     margin-top: 40vh;
     font-weight: bold;
     text-decoration: none; }
+
+@media (max-width: 600px) {
+  #welcome-section {
+    background: url(/assets/long-crop1-resize1.jpg);
+    background-repeat: no-repeat;
+    background-position: top, center;
+    background-size: cover; } }
 
 /*Projects section styling*/
 #project-section {

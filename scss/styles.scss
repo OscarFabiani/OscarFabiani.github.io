@@ -21,6 +21,10 @@ h1, h2, h3, h4, p {
   align-items: center;
   justify-content: center;
 }
+.green {
+  color: green;
+  font-weight: bold;
+}
 
 
 /*Navbar styling*/
@@ -119,7 +123,23 @@ h1, h2, h3, h4, p {
   @extend %flex-centered;
   background-color: $color1;
   .about-text {
-    margin: 2em 0;
+    @extend %flex-centered;
+    flex-direction: column;    
+    margin: 3em 1.5em;
+    width: 30em;
+    h1 {
+      margin-bottom: 2em;
+      padding-left: .5em;
+      border-left: 5px solid black;
+    }
+    ul {
+      columns: 2;
+      height: 8em;
+    }
+    @media (max-width: 650px) {
+      font-size: 15px;
+      line-height: 2em;
+    }
   }
 }
 
@@ -249,4 +269,6 @@ footer {
   }
 }
 
-/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, REBUILD WITH FLEXBOX/GRID, ADD FONT STYLE */
+
+/*CONTINUE WITH ABOUT SECTION: WRITE ABOUT AND STYLE UL*/
+/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

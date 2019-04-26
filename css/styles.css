@@ -8,10 +8,14 @@ body {
 h1, h2, h3, h4, p {
   margin: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
+
+.green {
+  color: green;
+  font-weight: bold; }
 
 /*Navbar styling*/
 .navbar {
@@ -87,7 +91,20 @@ h1, h2, h3, h4, p {
 #about-section {
   background-color: #e0ebe8; }
   #about-section .about-text {
-    margin: 2em 0; }
+    flex-direction: column;
+    margin: 3em 1.5em;
+    width: 30em; }
+    #about-section .about-text h1 {
+      margin-bottom: 2em;
+      padding-left: .5em;
+      border-left: 5px solid black; }
+    #about-section .about-text ul {
+      columns: 2;
+      height: 8em; }
+    @media (max-width: 650px) {
+      #about-section .about-text {
+        font-size: 15px;
+        line-height: 2em; } }
 
 /*Projects section styling*/
 #project-section {
@@ -184,4 +201,5 @@ footer {
   footer .blurb {
     margin: 0 2em 2em 2em; }
 
-/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, REBUILD WITH FLEXBOX/GRID, ADD FONT STYLE */
+/*CONTINUE WITH ABOUT SECTION: WRITE ABOUT AND STYLE UL*/
+/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

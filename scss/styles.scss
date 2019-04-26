@@ -62,35 +62,45 @@ h1, h2, h3, h4, p {
 
 /*Welcome section styling*/
 
+
 #welcome-section {
   @extend %flex-centered;
   flex-direction: column;
+  align-items: flex-end;
   height: 91vh;
-  width: 100vw;
   margin-top: 9vh;
-  background: url(/assets/wide-crop2-resize1.jpg);
+  background: url(/assets/long-crop6-resize1.jpg);
   background-repeat: no-repeat;
-  background-position: bottom, center;
   background-size: cover;
-  p {
-    color: $color2;
+  background-position-x: 60%;
+  background-position-y: 0%;
+  .welcome-text {
+    @extend %flex-centered;
+    flex-direction: column;
+    margin-right: 15vw;
+    p {
+      color: white;
+    }
   }
   a {
+    align-self: center;
     position: absolute;
-    margin-top: 40vh;
+    margin-top: 43vh;
+    color: white;
     font-weight: bold;
     text-decoration: none;
   }
-}
-
-@media (max-width: 600px) {
-  #welcome-section {
-    background: url(/assets/long-crop1-resize1.jpg);
-    background-repeat: no-repeat;
-    background-position: top, center;
-    background-size: cover;
+  @media (max-width: 700px) {
+    .welcome-text {
+      margin-right: 5vw;
+    }
+  }
+  @media (max-height: 550px) {
+    font-size: .8em;
   }
 }
+
+
 
 /*Projects section styling*/
 

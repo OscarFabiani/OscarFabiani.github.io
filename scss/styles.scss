@@ -167,7 +167,7 @@ h1, h2, h3, h4, p, ul {
         border-radius: .2em;
         height: 2em;
         width: 6em;
-        background-color:white;
+        background-color: $color1;
       }
     }
     @media (max-width: 800px) {
@@ -212,25 +212,17 @@ h1, h2, h3, h4, p, ul {
     margin: 0 3em 2em 3em;
     border: .2em solid $color3;
     border-radius: .5em;
+    width: 14em;
     color: $color2;
+    background-color: $color5;
     text-decoration: none;
-    .project-image {
-      opacity: 1;
-      margin-bottom: .5em;
-      border-bottom: .2em solid $color3;
-      height: 8em;
-      width: 12em;
-      border-top-right-radius: .3em;
-      border-top-left-radius: .3em;
-      background-color: white;
-    }
     .overlay {
       opacity: 0;
       position: absolute;
       margin-bottom: .5em;
       border-bottom: .2em solid $color3;
-      height: 8em;
-      width: 12em;
+      height: 10em;
+      width: 14em;
       color: white;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
@@ -240,8 +232,45 @@ h1, h2, h3, h4, p, ul {
     .overlay:hover {
       opacity: 1;
     }
+    .project-image {
+      opacity: 1;
+      margin-bottom: .5em;
+      border-bottom: .2em solid $color3;
+      height: 10em;
+      width: 14em;
+      border-top-right-radius: .3em;
+      border-top-left-radius: .3em;
+      background-color: white;
+    }
     .project-title {
       margin-bottom: .5em;
+    }
+    .project-summary {
+      margin: 0 .5em 1em;
+      height: 5em;
+      text-align: center;
+    }
+    .project-buttons {
+      @extend %flex-centered;
+      justify-content: space-around;
+      margin-bottom: .5em;
+      width: 100%;
+    }
+    .project-link {
+      margin: 0;
+      border: 2px solid $color3;
+      border-radius: 5px;
+      padding: .2em;
+      width: 3em;
+      color: $color2;
+      background-color:$color1;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+    }
+    .project-link:hover {
+      background: $color5;
+      color: green;
     }
   }
   .show-all {
@@ -316,5 +345,5 @@ footer {
   }
 }
 
-
+/*CONTINUE STYLING PROJECT TILES*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

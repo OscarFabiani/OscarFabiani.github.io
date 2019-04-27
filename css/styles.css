@@ -12,7 +12,7 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .project-buttons, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -125,7 +125,7 @@ h1, h2, h3, h4, p, ul {
         border-radius: .2em;
         height: 2em;
         width: 6em;
-        background-color: white; }
+        background-color: #e0ebe8; }
     @media (max-width: 800px) {
       #about-section .about-text {
         font-size: 15px; }
@@ -154,24 +154,17 @@ h1, h2, h3, h4, p, ul {
     margin: 0 3em 2em 3em;
     border: 0.2em solid #90C695;
     border-radius: .5em;
+    width: 14em;
     color: #008080;
+    background-color: #e4f1fe;
     text-decoration: none; }
-    #project-section .project .project-image {
-      opacity: 1;
-      margin-bottom: .5em;
-      border-bottom: 0.2em solid #90C695;
-      height: 8em;
-      width: 12em;
-      border-top-right-radius: .3em;
-      border-top-left-radius: .3em;
-      background-color: white; }
     #project-section .project .overlay {
       opacity: 0;
       position: absolute;
       margin-bottom: .5em;
       border-bottom: 0.2em solid #90C695;
-      height: 8em;
-      width: 12em;
+      height: 10em;
+      width: 14em;
       color: white;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
@@ -179,8 +172,39 @@ h1, h2, h3, h4, p, ul {
       transition: opacity .5s ease-in; }
     #project-section .project .overlay:hover {
       opacity: 1; }
+    #project-section .project .project-image {
+      opacity: 1;
+      margin-bottom: .5em;
+      border-bottom: 0.2em solid #90C695;
+      height: 10em;
+      width: 14em;
+      border-top-right-radius: .3em;
+      border-top-left-radius: .3em;
+      background-color: white; }
     #project-section .project .project-title {
       margin-bottom: .5em; }
+    #project-section .project .project-summary {
+      margin: 0 .5em 1em;
+      height: 5em;
+      text-align: center; }
+    #project-section .project .project-buttons {
+      justify-content: space-around;
+      margin-bottom: .5em;
+      width: 100%; }
+    #project-section .project .project-link {
+      margin: 0;
+      border: 2px solid #90C695;
+      border-radius: 5px;
+      padding: .2em;
+      width: 3em;
+      color: #008080;
+      background-color: #e0ebe8;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none; }
+    #project-section .project .project-link:hover {
+      background: #e4f1fe;
+      color: green; }
   #project-section .show-all {
     margin: 1em auto 5em;
     border: 2px solid #90C695;
@@ -234,4 +258,5 @@ footer {
   footer .blurb {
     margin: 0 2em 2em 2em; }
 
+/*CONTINUE STYLING PROJECT TILES*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

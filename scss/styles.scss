@@ -152,14 +152,22 @@ h1, h2, h3, h4, p, ul {
       line-height: 1.5em;
     }
     ul {
-      columns: 10em 2;
+      columns: 10em 3;
+      margin: 0 3em;
       li {
-        color: black;
+        @extend %flex-centered;
+        margin-bottom: 1em;
+        color: $color2;
         list-style-type: none;
-        list-style-position: inside;
-        line-height: 1.5em;
-        text-align: center;
         font-weight: bold;
+      }
+      .skill {
+        @extend %flex-centered;
+        border: .2em solid $color3;
+        border-radius: .2em;
+        height: 2em;
+        width: 6em;
+        background-color:white;
       }
     }
     @media (max-width: 800px) {
@@ -168,15 +176,14 @@ h1, h2, h3, h4, p, ul {
         font-size: 1.5em;
       }
       .statement {
-        width: 80vw;
+        width: 90vw;
         line-height: 2em;
       }
       p {
-        width: 80vw;
+        width: 90vw;
         line-height: 1.5em;
       }
       ul {
-
       }
     }
   }
@@ -188,9 +195,10 @@ h1, h2, h3, h4, p, ul {
 #project-section {
   @extend %flex-centered;
   flex-direction: column;
+  background-color: $color2;
   h1 {
     margin: 2em 0;
-    color: $color2;
+    color: $color4;
     font-weight: normal;
   }
   .projects {
@@ -309,5 +317,4 @@ footer {
 }
 
 
-/*CONTINUE WITH ABOUT SECTION: REVIEW ABOUT AND STYLE UL*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

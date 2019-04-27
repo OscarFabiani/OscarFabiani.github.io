@@ -12,7 +12,7 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -113,32 +113,38 @@ h1, h2, h3, h4, p, ul {
       width: 70vw;
       line-height: 1.5em; }
     #about-section .about-text ul {
-      columns: 10em 2; }
+      columns: 10em 3;
+      margin: 0 3em; }
       #about-section .about-text ul li {
-        color: black;
+        margin-bottom: 1em;
+        color: #008080;
         list-style-type: none;
-        list-style-position: inside;
-        line-height: 1.5em;
-        text-align: center;
         font-weight: bold; }
+      #about-section .about-text ul .skill {
+        border: 0.2em solid #90C695;
+        border-radius: .2em;
+        height: 2em;
+        width: 6em;
+        background-color: white; }
     @media (max-width: 800px) {
       #about-section .about-text {
         font-size: 15px; }
         #about-section .about-text h1 {
           font-size: 1.5em; }
         #about-section .about-text .statement {
-          width: 80vw;
+          width: 90vw;
           line-height: 2em; }
         #about-section .about-text p {
-          width: 80vw;
+          width: 90vw;
           line-height: 1.5em; } }
 
 /*Projects section styling*/
 #project-section {
-  flex-direction: column; }
+  flex-direction: column;
+  background-color: #008080; }
   #project-section h1 {
     margin: 2em 0;
-    color: #008080;
+    color: #C8F7C5;
     font-weight: normal; }
   #project-section .projects {
     flex-wrap: wrap; }
@@ -228,5 +234,4 @@ footer {
   footer .blurb {
     margin: 0 2em 2em 2em; }
 
-/*CONTINUE WITH ABOUT SECTION: REVIEW ABOUT AND STYLE UL*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

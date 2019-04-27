@@ -2,7 +2,12 @@
 $color1: #e0ebe8;
 $color2: #008080;
 $color3: #90C695;
-$color4: #e4f1fe;
+$color4: #C8F7C5;
+$color5: #e4f1fe;
+
+.color4 {
+  color: $color4;
+}
 
 html {
   font-size: 20px;
@@ -12,8 +17,9 @@ body {
   /*text-align: center;*/
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, ul {
   margin: 0;
+  padding: 0;
 }
 
 %flex-centered {
@@ -34,6 +40,7 @@ h1, h2, h3, h4, p {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  box-shadow: 0 -.1em 4px -1px $color3 inset;
   height: 2em;
   width: 100%;
   background: $color1;
@@ -84,10 +91,10 @@ h1, h2, h3, h4, p {
     flex-direction: column;
     margin-right: 15vw;
     font-size: 2.5vw;
+    h1 {
+      color: black;
+    }
     p {
-      color: ghostwhite;
-      color: honeydew;
-      color: white;
       color: mintcream;
     }
     @media (max-width: 1100px) {
@@ -126,19 +133,51 @@ h1, h2, h3, h4, p {
     @extend %flex-centered;
     flex-direction: column;    
     margin: 3em 1.5em;
-    width: 30em;
     h1 {
+      font-size: 2em;
       margin-bottom: 2em;
+      color: $color2;
+    }
+    .statement {
+      margin-left: .5em;
+      border-left: 5px solid $color2;
       padding-left: .5em;
-      border-left: 5px solid black;
+      width: 70vw;
+      color: $color2;
+    }
+    p {
+      font-size: 1.3em;
+      margin: 0 1em 3em;
+      width: 70vw;
+      line-height: 1.5em;
     }
     ul {
-      columns: 2;
-      height: 8em;
+      columns: 10em 2;
+      li {
+        color: black;
+        list-style-type: none;
+        list-style-position: inside;
+        line-height: 1.5em;
+        text-align: center;
+        font-weight: bold;
+      }
     }
-    @media (max-width: 650px) {
+    @media (max-width: 800px) {
       font-size: 15px;
-      line-height: 2em;
+      h1 {
+        font-size: 1.5em;
+      }
+      .statement {
+        width: 80vw;
+        line-height: 2em;
+      }
+      p {
+        width: 80vw;
+        line-height: 1.5em;
+      }
+      ul {
+
+      }
     }
   }
 }
@@ -210,7 +249,7 @@ h1, h2, h3, h4, p {
     text-decoration: none;
   }
   .show-all:hover {
-    background: $color4;
+    background: $color5;
     color: green;
   }
 }
@@ -220,7 +259,7 @@ h1, h2, h3, h4, p {
 #contact {
   @extend %flex-centered;
   flex-direction: column;
-  background: #C8F7C5;
+  background: $color4;
   h1 {
     margin-top: 2em;
   }
@@ -246,7 +285,7 @@ h1, h2, h3, h4, p {
     text-decoration: none;
   }
   .sphere:hover {
-    background: $color4;
+    background: $color5;
     color: green;
   }
 }
@@ -270,5 +309,5 @@ footer {
 }
 
 
-/*CONTINUE WITH ABOUT SECTION: WRITE ABOUT AND STYLE UL*/
+/*CONTINUE WITH ABOUT SECTION: REVIEW ABOUT AND STYLE UL*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

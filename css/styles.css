@@ -1,3 +1,6 @@
+.color4 {
+  color: #C8F7C5; }
+
 html {
   font-size: 20px; }
 
@@ -5,8 +8,9 @@ body {
   margin: 0;
   /*text-align: center;*/ }
 
-h1, h2, h3, h4, p {
-  margin: 0; }
+h1, h2, h3, h4, p, ul {
+  margin: 0;
+  padding: 0; }
 
 .navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #project-section, #project-section .projects, #project-section .project, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
@@ -22,6 +26,7 @@ h1, h2, h3, h4, p {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  box-shadow: 0 -0.1em 4px -1px #90C695 inset;
   height: 2em;
   width: 100%;
   background: #e0ebe8;
@@ -59,10 +64,9 @@ h1, h2, h3, h4, p {
     flex-direction: column;
     margin-right: 15vw;
     font-size: 2.5vw; }
+    #welcome-section .welcome-text h1 {
+      color: black; }
     #welcome-section .welcome-text p {
-      color: ghostwhite;
-      color: honeydew;
-      color: white;
       color: mintcream; }
     @media (max-width: 1100px) {
       #welcome-section .welcome-text {
@@ -92,19 +96,42 @@ h1, h2, h3, h4, p {
   background-color: #e0ebe8; }
   #about-section .about-text {
     flex-direction: column;
-    margin: 3em 1.5em;
-    width: 30em; }
+    margin: 3em 1.5em; }
     #about-section .about-text h1 {
+      font-size: 2em;
       margin-bottom: 2em;
+      color: #008080; }
+    #about-section .about-text .statement {
+      margin-left: .5em;
+      border-left: 5px solid #008080;
       padding-left: .5em;
-      border-left: 5px solid black; }
+      width: 70vw;
+      color: #008080; }
+    #about-section .about-text p {
+      font-size: 1.3em;
+      margin: 0 1em 3em;
+      width: 70vw;
+      line-height: 1.5em; }
     #about-section .about-text ul {
-      columns: 2;
-      height: 8em; }
-    @media (max-width: 650px) {
+      columns: 10em 2; }
+      #about-section .about-text ul li {
+        color: black;
+        list-style-type: none;
+        list-style-position: inside;
+        line-height: 1.5em;
+        text-align: center;
+        font-weight: bold; }
+    @media (max-width: 800px) {
       #about-section .about-text {
-        font-size: 15px;
-        line-height: 2em; } }
+        font-size: 15px; }
+        #about-section .about-text h1 {
+          font-size: 1.5em; }
+        #about-section .about-text .statement {
+          width: 80vw;
+          line-height: 2em; }
+        #about-section .about-text p {
+          width: 80vw;
+          line-height: 1.5em; } }
 
 /*Projects section styling*/
 #project-section {
@@ -201,5 +228,5 @@ footer {
   footer .blurb {
     margin: 0 2em 2em 2em; }
 
-/*CONTINUE WITH ABOUT SECTION: WRITE ABOUT AND STYLE UL*/
+/*CONTINUE WITH ABOUT SECTION: REVIEW ABOUT AND STYLE UL*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */

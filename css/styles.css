@@ -2,6 +2,8 @@
   color: #C8F7C5; }
 
 html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px; }
 
 body {
@@ -12,13 +14,13 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .project-buttons, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .project-buttons, #project-section .project .project-link, #project-section .show-all, #contact, #contact .contact-links, #contact .sphere, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
 
 .green {
-  color: green;
+  color: forestgreen;
   font-weight: bold; }
 
 /*Navbar styling*/
@@ -29,7 +31,7 @@ h1, h2, h3, h4, p, ul {
   box-shadow: 0 -0.1em 4px -1px #90C695 inset;
   height: 2em;
   width: 100%;
-  background: #e0ebe8;
+  background: #C8F7C5;
   z-index: 999; }
   .navbar .home {
     margin-left: 1em;
@@ -45,12 +47,13 @@ h1, h2, h3, h4, p, ul {
       padding: 0 5vw; }
       .navbar ul li a {
         color: #008080;
+        font-weight: bold;
         text-decoration: none; }
       .navbar ul li a:hover {
         /*color: limegreen; */
         /*Alernative highlighting strategy */
         color: green;
-        border-bottom: 1px solid; }
+        border-bottom: 2px solid; }
     .navbar ul .border-right {
       border-right: 1px solid; }
 
@@ -65,9 +68,10 @@ h1, h2, h3, h4, p, ul {
     margin-right: 15vw;
     font-size: 2.5vw; }
     #welcome-section .welcome-text h1 {
-      color: black; }
+      color: white; }
     #welcome-section .welcome-text p {
-      color: mintcream; }
+      font-size: .8em;
+      color: white; }
     @media (max-width: 1100px) {
       #welcome-section .welcome-text {
         font-size: 3vw;
@@ -84,7 +88,8 @@ h1, h2, h3, h4, p, ul {
     align-self: center;
     position: absolute;
     margin-top: 43vh;
-    color: white;
+    color: #C8F7C5;
+    font-size: 2em;
     font-weight: bold;
     text-decoration: none; }
   @media (max-height: 550px) {
@@ -96,13 +101,12 @@ h1, h2, h3, h4, p, ul {
   background-color: #e0ebe8; }
   #about-section .about-text {
     flex-direction: column;
-    margin: 3em 1.5em; }
+    margin: 4em 1.5em; }
     #about-section .about-text h1 {
       font-size: 2em;
-      margin-bottom: 2em;
       color: #008080; }
     #about-section .about-text .statement {
-      margin-left: .5em;
+      margin: 0 0 2em .5em;
       border-left: 5px solid #008080;
       padding-left: .5em;
       width: 70vw;
@@ -112,17 +116,23 @@ h1, h2, h3, h4, p, ul {
       margin: 0 1em 3em;
       width: 70vw;
       line-height: 1.5em; }
+    #about-section .about-text .skills {
+      margin-bottom: 1em; }
     #about-section .about-text ul {
-      columns: 10em 3;
-      margin: 0 3em; }
+      columns: 12em 3;
+      margin: 0 3em 0 5em; }
       #about-section .about-text ul li {
         margin-bottom: 1em;
         color: #008080;
-        list-style-type: none;
+        font-size: 1.3em;
         font-weight: bold; }
+      #about-section .about-text ul .check {
+        margin-right: .5em;
+        color: #008080; }
       #about-section .about-text ul .skill {
-        border: 0.2em solid #90C695;
-        border-radius: .2em;
+        justify-content: flex-start;
+        /*border: .2em solid $color3;
+        border-radius: .2em;*/
         height: 2em;
         width: 6em;
         background-color: #e0ebe8; }
@@ -143,18 +153,19 @@ h1, h2, h3, h4, p, ul {
   flex-direction: column;
   background-color: #008080; }
   #project-section h1 {
-    margin: 2em 0;
+    margin: 1.5em 0;
     color: #C8F7C5;
+    font-size: 2em;
     font-weight: normal; }
   #project-section .projects {
     flex-wrap: wrap; }
   #project-section .project {
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 3em 2em 3em;
+    margin: 0 .5em 1em .5em;
     border: 0.2em solid #90C695;
     border-radius: .5em;
-    width: 14em;
+    width: 16em;
     color: #008080;
     background-color: #e4f1fe;
     text-decoration: none; }
@@ -164,7 +175,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: .5em;
       border-bottom: 0.2em solid #90C695;
       height: 10em;
-      width: 14em;
+      width: 16em;
       color: white;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
@@ -177,7 +188,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: .5em;
       border-bottom: 0.2em solid #90C695;
       height: 10em;
-      width: 14em;
+      width: 16em;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
       background-color: white; }
@@ -185,7 +196,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: .5em; }
     #project-section .project .project-summary {
       margin: 0 .5em 1em;
-      height: 5em;
+      height: 4em;
       text-align: center; }
     #project-section .project .project-buttons {
       justify-content: space-around;
@@ -194,14 +205,19 @@ h1, h2, h3, h4, p, ul {
     #project-section .project .project-link {
       margin: 0;
       border: 2px solid #90C695;
-      border-radius: 5px;
+      border-radius: 50%;
       padding: .2em;
-      width: 3em;
+      width: 2em;
+      height: 2em;
       color: #008080;
       background-color: #e0ebe8;
       font-weight: bold;
       text-align: center;
       text-decoration: none; }
+    #project-section .project .demo-link {
+      margin-left: .2em; }
+    #project-section .project .github-link {
+      font-size: 1.4em; }
     #project-section .project .project-link:hover {
       background: #e4f1fe;
       color: green; }

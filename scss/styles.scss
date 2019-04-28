@@ -10,6 +10,8 @@ $color5: #e4f1fe;
 }
 
 html {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px;
 }
 body {
@@ -28,7 +30,7 @@ h1, h2, h3, h4, p, ul {
   justify-content: center;
 }
 .green {
-  color: green;
+  color: forestgreen;
   font-weight: bold;
 }
 
@@ -43,7 +45,7 @@ h1, h2, h3, h4, p, ul {
   box-shadow: 0 -.1em 4px -1px $color3 inset;
   height: 2em;
   width: 100%;
-  background: $color1;
+  background: $color4;
   z-index: 999;
   .home {
     margin-left: 1em;
@@ -62,12 +64,13 @@ h1, h2, h3, h4, p, ul {
       padding: 0 5vw;
       a {
         color: $color2;
+        font-weight: bold;
         text-decoration: none;
       }
       a:hover {
         /*color: limegreen; */ /*Alernative highlighting strategy */
         color: green;
-        border-bottom: 1px solid;
+        border-bottom: 2px solid;
       }
     }
     .border-right {
@@ -92,10 +95,11 @@ h1, h2, h3, h4, p, ul {
     margin-right: 15vw;
     font-size: 2.5vw;
     h1 {
-      color: black;
+      color: white;
     }
     p {
-      color: mintcream;
+      font-size: .8em;
+      color: white;
     }
     @media (max-width: 1100px) {
         font-size: 3vw;
@@ -114,7 +118,8 @@ h1, h2, h3, h4, p, ul {
     align-self: center;
     position: absolute;
     margin-top: 43vh;
-    color: white;
+    color: $color4;
+    font-size: 2em;
     font-weight: bold;
     text-decoration: none;
   }
@@ -132,14 +137,13 @@ h1, h2, h3, h4, p, ul {
   .about-text {
     @extend %flex-centered;
     flex-direction: column;    
-    margin: 3em 1.5em;
+    margin: 4em 1.5em;
     h1 {
       font-size: 2em;
-      margin-bottom: 2em;
       color: $color2;
     }
     .statement {
-      margin-left: .5em;
+      margin: 0 0 2em .5em;
       border-left: 5px solid $color2;
       padding-left: .5em;
       width: 70vw;
@@ -151,20 +155,28 @@ h1, h2, h3, h4, p, ul {
       width: 70vw;
       line-height: 1.5em;
     }
+    .skills {
+      margin-bottom: 1em;
+    }
     ul {
-      columns: 10em 3;
-      margin: 0 3em;
+      columns: 12em 3;
+      margin: 0 3em 0 5em;
       li {
         @extend %flex-centered;
         margin-bottom: 1em;
         color: $color2;
-        list-style-type: none;
+        font-size: 1.3em;
         font-weight: bold;
+      }
+      .check {
+        margin-right: .5em;
+        color: $color2;
       }
       .skill {
         @extend %flex-centered;
-        border: .2em solid $color3;
-        border-radius: .2em;
+        justify-content: flex-start;
+        /*border: .2em solid $color3;
+        border-radius: .2em;*/
         height: 2em;
         width: 6em;
         background-color: $color1;
@@ -197,8 +209,9 @@ h1, h2, h3, h4, p, ul {
   flex-direction: column;
   background-color: $color2;
   h1 {
-    margin: 2em 0;
+    margin: 1.5em 0;
     color: $color4;
+    font-size: 2em;
     font-weight: normal;
   }
   .projects {
@@ -209,10 +222,10 @@ h1, h2, h3, h4, p, ul {
     @extend %flex-centered;
     flex-direction: column;
     justify-content: flex-start;
-    margin: 0 3em 2em 3em;
+    margin: 0 .5em 1em .5em;
     border: .2em solid $color3;
     border-radius: .5em;
-    width: 14em;
+    width: 16em;
     color: $color2;
     background-color: $color5;
     text-decoration: none;
@@ -222,7 +235,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: .5em;
       border-bottom: .2em solid $color3;
       height: 10em;
-      width: 14em;
+      width: 16em;
       color: white;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
@@ -237,7 +250,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: .5em;
       border-bottom: .2em solid $color3;
       height: 10em;
-      width: 14em;
+      width: 16em;
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
       background-color: white;
@@ -247,7 +260,7 @@ h1, h2, h3, h4, p, ul {
     }
     .project-summary {
       margin: 0 .5em 1em;
-      height: 5em;
+      height: 4em;
       text-align: center;
     }
     .project-buttons {
@@ -257,16 +270,24 @@ h1, h2, h3, h4, p, ul {
       width: 100%;
     }
     .project-link {
+      @extend %flex-centered;
       margin: 0;
       border: 2px solid $color3;
-      border-radius: 5px;
+      border-radius: 50%;
       padding: .2em;
-      width: 3em;
+      width: 2em;
+      height: 2em;
       color: $color2;
       background-color:$color1;
       font-weight: bold;
       text-align: center;
       text-decoration: none;
+    }
+    .demo-link {
+      margin-left: .2em;
+    }
+    .github-link {
+      font-size: 1.4em;
     }
     .project-link:hover {
       background: $color5;

@@ -171,6 +171,7 @@ h1, h2, h3, h4, p, ul {
       .check {
         margin-right: .5em;
         color: $color2;
+        color: forestgreen;
       }
       .skill {
         @extend %flex-centered;
@@ -217,6 +218,7 @@ h1, h2, h3, h4, p, ul {
   .projects {
     @extend %flex-centered;
     flex-wrap: wrap;
+    margin-bottom: 3em;
   }
   .project {
     @extend %flex-centered;
@@ -232,15 +234,22 @@ h1, h2, h3, h4, p, ul {
     .overlay {
       opacity: 0;
       position: absolute;
+      @extend %flex-centered;
+      justify-content: flex-start;
+      flex-direction: column;
       margin-bottom: .5em;
       border-bottom: .2em solid $color3;
       height: 10em;
       width: 16em;
-      color: white;
+      color: $color1;
+      color: $color4;      
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
-      background-color: rgba(0, 0, 0, 0.5);
-      transition: opacity .5s ease-in; 
+      background-color: rgba(0, 0, 0, 0.8);
+      transition: opacity .5s ease-out; 
+      h3 {
+        margin: .5em 0;
+      }
     }
     .overlay:hover {
       opacity: 1;
@@ -290,25 +299,9 @@ h1, h2, h3, h4, p, ul {
       font-size: 1.4em;
     }
     .project-link:hover {
-      background: $color5;
+      background: $color4;
       color: green;
     }
-  }
-  .show-all {
-    @extend %flex-centered;
-    margin: 1em auto 5em;
-    border: 2px solid $color3;
-    border-radius: 5px;
-    height: 40px;
-    width: 200px;
-    background: $color1;
-    color: $color2;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  .show-all:hover {
-    background: $color5;
-    color: green;
   }
 }
 
@@ -352,7 +345,7 @@ h1, h2, h3, h4, p, ul {
 footer {
   @extend %flex-centered;
   flex-direction: column;
-  padding: 2em 0;
+  padding: 1em 0;
   background: #22313F;
   color: white;
   a {
@@ -360,6 +353,9 @@ footer {
     color: white;
     font-weight: bold;
     text-decoration: none;
+  }
+  .up-arrow {
+    font-size: 2em;
   }
   .blurb {
     margin: 0 2em 2em 2em;

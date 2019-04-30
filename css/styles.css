@@ -8,13 +8,15 @@ html {
 
 body {
   margin: 0;
-  /*text-align: center;*/ }
+  padding: 0;
+  width: 100vw;
+  /* this fixes a thin white strip along the right when window is minimized.*/ }
 
 h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact .contact-p, #contact .contact-link, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact p.contact-p, #contact .contact-link-button, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -50,8 +52,6 @@ h1, h2, h3, h4, p, ul {
         font-weight: bold;
         text-decoration: none; }
       .navbar ul li a:hover {
-        /*color: limegreen; */
-        /*Alernative highlighting strategy */
         color: green;
         border-bottom: 2px solid; }
     .navbar ul .border-right {
@@ -84,21 +84,25 @@ h1, h2, h3, h4, p, ul {
       #welcome-section .welcome-text {
         font-size: 4.5vw;
         margin-right: 5vw; } }
-  #welcome-section a {
+  #welcome-section .scroll-down-link {
     align-self: center;
     position: absolute;
     margin-top: 43vh;
     color: #C8F7C5;
     font-size: 2em;
-    font-weight: bold;
-    text-decoration: none; }
+    text-decoration: none;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out; }
+    #welcome-section .scroll-down-link:hover {
+      font-size: 2.2em; }
   @media (max-height: 550px) {
     #welcome-section {
       font-size: .8em; } }
 
 /*About section styling*/
 #about-section {
-  background-color: #e0ebe8; }
+  background-color: #e4f1fe; }
   #about-section .about-text {
     flex-direction: column;
     margin: 4em 1.5em; }
@@ -119,7 +123,7 @@ h1, h2, h3, h4, p, ul {
     #about-section .about-text .skills {
       margin-bottom: 1em; }
     #about-section .about-text ul {
-      columns: 12em 3;
+      columns: 10em 3;
       margin: 0 3em 0 5em; }
       #about-section .about-text ul li {
         margin-bottom: 1em;
@@ -132,11 +136,8 @@ h1, h2, h3, h4, p, ul {
         color: forestgreen; }
       #about-section .about-text ul .skill {
         justify-content: flex-start;
-        /*border: .2em solid $color3;
-        border-radius: .2em;*/
         height: 2em;
-        width: 6em;
-        background-color: #e0ebe8; }
+        width: 6em; }
     @media (max-width: 800px) {
       #about-section .about-text {
         font-size: 15px; }
@@ -147,7 +148,10 @@ h1, h2, h3, h4, p, ul {
           line-height: 2em; }
         #about-section .about-text p {
           width: 90vw;
-          line-height: 1.5em; } }
+          line-height: 1.5em; }
+        #about-section .about-text ul {
+          columns: 8em 2;
+          margin-left: 6em; } }
 
 /*Projects section styling*/
 #project-section {
@@ -233,20 +237,22 @@ h1, h2, h3, h4, p, ul {
 /*Contact section styling*/
 #contact {
   flex-direction: column;
-  background: #C8F7C5; }
+  background: #e4f1fe; }
   #contact h1 {
     margin-top: 2em;
     color: #008080;
     font-size: 2em; }
   #contact p.contact-blurb {
-    margin-bottom: 5em;
+    margin-bottom: 4em;
     color: #008080; }
   #contact .contact-links {
     flex-direction: column;
-    margin-bottom: 10em; }
-  #contact .contact-p {
+    align-items: flex-start;
+    margin-bottom: 4em;
+    width: 16em; }
+  #contact p.contact-p {
     margin-bottom: 2em; }
-  #contact .contact-link {
+  #contact .contact-link-button {
     height: 3em;
     width: 3em;
     border: 0.1em solid #90C695;
@@ -254,25 +260,41 @@ h1, h2, h3, h4, p, ul {
     background: #e0ebe8;
     color: #008080;
     text-decoration: none; }
-  #contact .contact-link:hover {
-    background: #e4f1fe;
-    color: green; }
+    #contact .contact-link-button:hover {
+      background: #C8F7C5;
+      color: green; }
+  #contact .contact-link {
+    margin-left: 1em;
+    height: 1.3em;
+    color: #008080;
+    text-decoration: none;
+    box-sizing: border-box; }
+    #contact .contact-link:hover {
+      border-bottom: .1em solid;
+      color: forestgreen; }
 
 footer {
   flex-direction: column;
   padding: 1em 0;
-  background: #22313F;
-  color: white; }
+  background: #C8F7C5;
+  color: #008080; }
   footer a {
     margin-bottom: 1em;
-    color: white;
+    height: 2em;
+    color: #008080;
     font-weight: bold;
     text-decoration: none; }
   footer .up-arrow {
-    font-size: 2em; }
+    font-size: 2em;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out; }
+    footer .up-arrow:hover {
+      font-size: 2.2em; }
   footer .blurb {
     margin: 0 2em 2em 2em; }
 
-/*CONTINUE STYLING PROJECT TILES*/
-/*FIX SINGLE COLUMN FOR SKILLS IN MOBILE*/
-/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */
+/*ADD TOOLTIPS*/
+/*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*POSSIBLY REWORK COLOR SCHEME FOR CONTACT (MAYBE MAKE FOOTER NAV COLOR FOR FRAMING)*/
+/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/

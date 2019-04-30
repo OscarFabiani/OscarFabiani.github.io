@@ -16,7 +16,8 @@ html {
 }
 body {
   margin: 0;
-  /*text-align: center;*/
+  padding: 0;
+  width: 100vw; /* this fixes a thin white strip along the right when window is minimized.*/
 }
 
 h1, h2, h3, h4, p, ul {
@@ -68,7 +69,6 @@ h1, h2, h3, h4, p, ul {
         text-decoration: none;
       }
       a:hover {
-        /*color: limegreen; */ /*Alernative highlighting strategy */
         color: green;
         border-bottom: 2px solid;
       }
@@ -114,14 +114,19 @@ h1, h2, h3, h4, p, ul {
         margin-right: 5vw;
     }
   }
-  a {
+  .scroll-down-link {
     align-self: center;
     position: absolute;
     margin-top: 43vh;
     color: $color4;
     font-size: 2em;
-    font-weight: bold;
     text-decoration: none;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+    &:hover {
+      font-size: 2.2em;
+    }
   }
   @media (max-height: 550px) {
     font-size: .8em;
@@ -133,7 +138,7 @@ h1, h2, h3, h4, p, ul {
 
 #about-section {
   @extend %flex-centered;
-  background-color: $color1;
+  background-color: $color5;
   .about-text {
     @extend %flex-centered;
     flex-direction: column;    
@@ -159,7 +164,7 @@ h1, h2, h3, h4, p, ul {
       margin-bottom: 1em;
     }
     ul {
-      columns: 12em 3;
+      columns: 10em 3;
       margin: 0 3em 0 5em;
       li {
         @extend %flex-centered;
@@ -176,11 +181,8 @@ h1, h2, h3, h4, p, ul {
       .skill {
         @extend %flex-centered;
         justify-content: flex-start;
-        /*border: .2em solid $color3;
-        border-radius: .2em;*/
         height: 2em;
         width: 6em;
-        background-color: $color1;
       }
     }
     @media (max-width: 800px) {
@@ -197,6 +199,8 @@ h1, h2, h3, h4, p, ul {
         line-height: 1.5em;
       }
       ul {
+        columns: 8em 2;
+        margin-left: 6em;
       }
     }
   }
@@ -311,28 +315,28 @@ h1, h2, h3, h4, p, ul {
 #contact {
   @extend %flex-centered;
   flex-direction: column;
-  background: $color4;
+  background: $color5;
   h1 {
     margin-top: 2em;
     color: $color2;
     font-size: 2em;
   }
    p.contact-blurb {
-    margin-bottom: 5em;
+    margin-bottom: 4em;
     color: $color2;
-  }
-  p {
   }
   .contact-links {
     @extend %flex-centered;
     flex-direction: column;
-    margin-bottom: 10em;
+    align-items: flex-start;
+    margin-bottom: 4em;
+    width: 16em;
   }
-  .contact-p {
+  p.contact-p {
     @extend %flex-centered;
     margin-bottom: 2em;
   }
-  .contact-link {
+  .contact-link-button {
     @extend %flex-centered;
     height: 3em;
     width: 3em;
@@ -341,10 +345,21 @@ h1, h2, h3, h4, p, ul {
     background: $color1;
     color: $color2;
     text-decoration: none;
+    &:hover {
+      background: $color4;
+      color: green;
+    }
   }
-  .contact-link:hover {
-    background: $color5;
-    color: green;
+  .contact-link {
+    margin-left: 1em;
+    height: 1.3em;
+    color: $color2;
+    text-decoration: none;
+    box-sizing: border-box;
+    &:hover {
+      border-bottom: .1em solid;
+      color: forestgreen;
+    }
   }
 }
 
@@ -353,16 +368,23 @@ footer {
   @extend %flex-centered;
   flex-direction: column;
   padding: 1em 0;
-  background: #22313F;
-  color: white;
+  background: $color4;
+  color: $color2;
   a {
     margin-bottom: 1em;
-    color: white;
+    height: 2em;
+    color: $color2;
     font-weight: bold;
     text-decoration: none;
   }
   .up-arrow {
     font-size: 2em;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+    &:hover {
+      font-size: 2.2em;
+    }
   }
   .blurb {
     margin: 0 2em 2em 2em;
@@ -370,6 +392,7 @@ footer {
 }
 
 
-/*CONTINUE STYLING PROJECT TILES*/
-/*FIX SINGLE COLUMN FOR SKILLS IN MOBILE*/
-/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH, ADD FONT STYLE */
+/*ADD TOOLTIPS*/
+/*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*POSSIBLY REWORK COLOR SCHEME FOR CONTACT (MAYBE MAKE FOOTER NAV COLOR FOR FRAMING)*/
+/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/

@@ -35,6 +35,35 @@ h1, h2, h3, h4, p, ul {
   font-weight: bold;
 }
 
+[tooltip]:before {
+  /* needed - do not touch */
+  content: attr(tooltip);
+  position: absolute;
+  opacity: 0;
+  
+  /* customizable */
+  width: max-content;
+  transition: all 0.15s ease;
+  padding: .5em;
+  color: $color4;
+  background-color: $color2;
+  border-radius: .5em;
+  font-size: .8em; 
+}
+
+[tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  
+  /* customizable */
+  background-color: $color2;
+  margin-top: -50px;
+}
+
+[tooltip]:not([tooltip-persistent]):before {
+  pointer-events: none;
+}
+
 
 /*Navbar styling*/
 
@@ -119,8 +148,10 @@ h1, h2, h3, h4, p, ul {
     position: absolute;
     margin-top: 43vh;
     color: $color4;
-    font-size: 2em;
     text-decoration: none;
+  }
+  .down-arrow {
+    font-size: 2em;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out;
@@ -367,14 +398,12 @@ h1, h2, h3, h4, p, ul {
 footer {
   @extend %flex-centered;
   flex-direction: column;
-  padding: 1em 0;
   background: $color4;
   color: $color2;
   a {
-    margin-bottom: 1em;
+    margin: 1em 0;
     height: 2em;
     color: $color2;
-    font-weight: bold;
     text-decoration: none;
   }
   .up-arrow {
@@ -387,12 +416,14 @@ footer {
     }
   }
   .blurb {
-    margin: 0 2em 2em 2em;
+    margin-bottom: 1em;
+  }
+  .copywright {
+    margin-bottom: 2em;
   }
 }
 
 
 /*ADD TOOLTIPS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
-/*POSSIBLY REWORK COLOR SCHEME FOR CONTACT (MAYBE MAKE FOOTER NAV COLOR FOR FRAMING)*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/

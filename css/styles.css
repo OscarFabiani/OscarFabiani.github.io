@@ -25,6 +25,30 @@ h1, h2, h3, h4, p, ul {
   color: forestgreen;
   font-weight: bold; }
 
+[tooltip]:before {
+  /* needed - do not touch */
+  content: attr(tooltip);
+  position: absolute;
+  opacity: 0;
+  /* customizable */
+  width: max-content;
+  transition: all 0.15s ease;
+  padding: .5em;
+  color: #C8F7C5;
+  background-color: #008080;
+  border-radius: .5em;
+  font-size: .8em; }
+
+[tooltip]:hover:before {
+  /* needed - do not touch */
+  opacity: 1;
+  /* customizable */
+  background-color: #008080;
+  margin-top: -50px; }
+
+[tooltip]:not([tooltip-persistent]):before {
+  pointer-events: none; }
+
 /*Navbar styling*/
 .navbar {
   justify-content: space-between;
@@ -89,12 +113,13 @@ h1, h2, h3, h4, p, ul {
     position: absolute;
     margin-top: 43vh;
     color: #C8F7C5;
+    text-decoration: none; }
+  #welcome-section .down-arrow {
     font-size: 2em;
-    text-decoration: none;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out; }
-    #welcome-section .scroll-down-link:hover {
+    #welcome-section .down-arrow:hover {
       font-size: 2.2em; }
   @media (max-height: 550px) {
     #welcome-section {
@@ -275,14 +300,12 @@ h1, h2, h3, h4, p, ul {
 
 footer {
   flex-direction: column;
-  padding: 1em 0;
   background: #C8F7C5;
   color: #008080; }
   footer a {
-    margin-bottom: 1em;
+    margin: 1em 0;
     height: 2em;
     color: #008080;
-    font-weight: bold;
     text-decoration: none; }
   footer .up-arrow {
     font-size: 2em;
@@ -292,9 +315,10 @@ footer {
     footer .up-arrow:hover {
       font-size: 2.2em; }
   footer .blurb {
-    margin: 0 2em 2em 2em; }
+    margin-bottom: 1em; }
+  footer .copywright {
+    margin-bottom: 2em; }
 
 /*ADD TOOLTIPS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
-/*POSSIBLY REWORK COLOR SCHEME FOR CONTACT (MAYBE MAKE FOOTER NAV COLOR FOR FRAMING)*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/

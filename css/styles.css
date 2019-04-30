@@ -14,7 +14,7 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact .contact-link, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact .contact-p, #contact .contact-link, footer {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -171,8 +171,7 @@ h1, h2, h3, h4, p, ul {
     box-shadow: 0 0 0.5em 0.1em rgba(255, 255, 255, 0.3);
     width: 16em;
     color: #008080;
-    background-color: #e4f1fe;
-    text-decoration: none; }
+    background-color: #e4f1fe; }
     #project-section .project .overlay {
       opacity: 0;
       position: absolute;
@@ -187,6 +186,7 @@ h1, h2, h3, h4, p, ul {
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
       background-color: rgba(0, 0, 0, 0.8);
+      text-decoration: none;
       transition: opacity .5s ease-out; }
       #project-section .project .overlay h3 {
         margin: .5em 0; }
@@ -220,9 +220,8 @@ h1, h2, h3, h4, p, ul {
       height: 2em;
       color: #008080;
       background-color: #e0ebe8;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none; }
+      text-decoration: none;
+      cursor: pointer; }
     #project-section .project .demo-link {
       margin-left: .2em; }
     #project-section .project .github-link {
@@ -245,8 +244,9 @@ h1, h2, h3, h4, p, ul {
   #contact .contact-links {
     flex-direction: column;
     margin-bottom: 10em; }
+  #contact .contact-p {
+    margin-bottom: 2em; }
   #contact .contact-link {
-    margin-bottom: 2em;
     height: 3em;
     width: 3em;
     border: 0.1em solid #90C695;

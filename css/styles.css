@@ -16,7 +16,7 @@ h1, h2, h3, h4, p, ul {
   margin: 0;
   padding: 0; }
 
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact p.contact-p, #contact .contact-link-button, footer {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact p.contact-p, #contact .contact-link-button, footer, footer a {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -26,28 +26,31 @@ h1, h2, h3, h4, p, ul {
   font-weight: bold; }
 
 [tooltip]:before {
-  /* needed - do not touch */
   content: attr(tooltip);
   position: absolute;
   opacity: 0;
-  /* customizable */
   width: max-content;
   transition: all 0.15s ease;
   padding: .5em;
   color: #C8F7C5;
   background-color: #008080;
   border-radius: .5em;
-  font-size: .8em; }
+  font-size: .8em;
+  pointer-events: none; }
 
 [tooltip]:hover:before {
-  /* needed - do not touch */
   opacity: 1;
-  /* customizable */
   background-color: #008080;
-  margin-top: -50px; }
+  margin-top: -3em; }
 
-[tooltip]:not([tooltip-persistent]):before {
-  pointer-events: none; }
+/*Animations*/
+@keyframes bounce-down {
+  90% {
+    margin-top: 0; }
+  95% {
+    margin-top: .3em; }
+  100% {
+    margin-top: 0; } }
 
 /*Navbar styling*/
 .navbar {
@@ -116,26 +119,16 @@ h1, h2, h3, h4, p, ul {
     text-decoration: none; }
   #welcome-section .down-arrow {
     font-size: 2em;
-    animation: bounce 5s infinite;
+    animation: bounce-down 5s infinite;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out; }
     #welcome-section .down-arrow:hover {
       animation: none;
-      font-size: 2.2em; }
+      font-size: 2.1em; }
   @media (max-height: 550px) {
     #welcome-section {
       font-size: .8em; } }
-
-@keyframes bounce {
-  0% {
-    margin-top: 0; }
-  90% {
-    margin-top: 0; }
-  95% {
-    margin-top: .3em; }
-  100% {
-    margin-top: 0; } }
 
 /*About section styling*/
 #about-section {
@@ -290,12 +283,13 @@ h1, h2, h3, h4, p, ul {
   #contact p.contact-p {
     margin-bottom: 2em; }
   #contact .contact-link-button {
-    height: 3em;
-    width: 3em;
+    height: 2.5em;
+    width: 2.5em;
     border: 0.1em solid #90C695;
     border-radius: 50%;
     background: #e0ebe8;
     color: #008080;
+    font-size: 1em;
     text-decoration: none; }
     #contact .contact-link-button:hover {
       background: #C8F7C5;
@@ -309,13 +303,20 @@ h1, h2, h3, h4, p, ul {
     #contact .contact-link:hover {
       border-bottom: .1em solid;
       color: forestgreen; }
+  #contact .mail-icon {
+    font-size: 1.1em; }
+  #contact .github-icon {
+    font-size: 1.3em; }
+  #contact .linkedin-icon {
+    font-size: 1.2em; }
 
 footer {
   flex-direction: column;
   background: #C8F7C5;
   color: #008080; }
   footer a {
-    margin: 1em 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
     height: 2em;
     color: #008080;
     text-decoration: none; }
@@ -325,7 +326,7 @@ footer {
     transition-duration: .2s;
     transition-timing-function: ease-out; }
     footer .up-arrow:hover {
-      font-size: 2.2em; }
+      font-size: 2.1em; }
   footer .blurb {
     margin-bottom: 1em; }
   footer .copywright {

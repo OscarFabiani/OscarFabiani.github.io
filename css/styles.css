@@ -116,14 +116,26 @@ h1, h2, h3, h4, p, ul {
     text-decoration: none; }
   #welcome-section .down-arrow {
     font-size: 2em;
+    animation: bounce 5s infinite;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out; }
     #welcome-section .down-arrow:hover {
+      animation: none;
       font-size: 2.2em; }
   @media (max-height: 550px) {
     #welcome-section {
       font-size: .8em; } }
+
+@keyframes bounce {
+  0% {
+    margin-top: 0; }
+  90% {
+    margin-top: 0; }
+  95% {
+    margin-top: .3em; }
+  100% {
+    margin-top: 0; } }
 
 /*About section styling*/
 #about-section {
@@ -319,6 +331,6 @@ footer {
   footer .copywright {
     margin-bottom: 2em; }
 
-/*ADD TOOLTIPS*/
+/*REFINE ARROW TOOLTIPS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
 /* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/

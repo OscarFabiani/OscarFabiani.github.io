@@ -1,7 +1,7 @@
 
 $color1: #e0ebe8;
 $color2: #008080;
-$color3: #90C695;
+$color3: #90c695;
 $color4: #C8F7C5;
 $color5: #e4f1fe;
 
@@ -44,6 +44,7 @@ h1, h2, h3, h4, p, ul {
   padding: .5em;
   color: $color4;
   background-color: $color2;
+  box-shadow: 0 0 .2em 0 $color5;
   border-radius: .5em;
   font-size: .8em; 
   pointer-events: none;
@@ -55,13 +56,14 @@ h1, h2, h3, h4, p, ul {
   margin-top: -3em;
 }
 
+
 /*Animations*/
 
 @keyframes bounce-down {
-  90% {
+  80% {
     margin-top: 0;
   }
-  95% {
+  90% {
     margin-top: .3em;
   }
   100% {
@@ -84,6 +86,7 @@ h1, h2, h3, h4, p, ul {
   z-index: 999;
   .home {
     margin-left: 1em;
+    text-align: center;
     text-decoration: none;
     font-weight: bold;
     color: $color2;
@@ -96,7 +99,10 @@ h1, h2, h3, h4, p, ul {
     list-style-type: none;
     user-select: none;
     li {
-      padding: 0 5vw;
+      padding: 0 4vw;
+      @media (max-width: 650px) {
+        padding: 0 2vw;
+      }
       a {
         color: $color2;
         font-weight: bold;
@@ -114,26 +120,70 @@ h1, h2, h3, h4, p, ul {
 }
 
 
+.tri-test {
+  opacity: 0;
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  background: url(/assets/square-crop-close-resize1.jpg) center;
+  clip-path: polygon(1% 78%, 46% 2%, 49% 0, 54% 0, 57% 2%, 98% 78%, 98% 83%, 95% 87%, 89% 88%, 6% 89%, 2% 87%, 0 83%);
+}
+
+.svg-triangle {
+  opacity: 0;
+  position: absolute;
+  border: 1px solid black;
+  height: 10em;
+  width: auto;
+  & path {
+    stroke-width: 20;
+    stroke: url(/assets/square-crop-close-resize1.jpg);
+    stroke: rgba(0, 0, 0, 0.7);
+    stroke-opacity: unset;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+}
+
+
 /*Welcome section styling*/
 
 
 #welcome-section {
   @extend %flex-centered;
   flex-direction: column;
-  align-items: flex-end;
+  flex-direction: row;
   height: 100vh;
-  background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover;
+  /*background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover;*/
+  background-blend-mode: color-dodge;
+  background-blend-mode: luminosity;
+  background-blend-mode: screen;
+  background-blend-mode: hard-light;
+  background-blend-mode: color-burn;
+  background-blend-mode: multiply;
+  background-color: $color2;
+  background-image: url(/assets/gplay.png);
+  background-image: url(/assets/strange-bullseyes.png);
+  background-size: unset;
+  background-repeat: repeat;
+  .profile-pic {
+    margin-right: 5vw;
+    min-width: 16em;
+    max-width: 16em;
+    height: auto;
+    border-radius: 50%;
+  }
   .welcome-text {
     @extend %flex-centered;
     flex-direction: column;
     margin-right: 15vw;
+    margin: 0;
+    color: $color5;
     font-size: 2.5vw;
     h1 {
-      color: white;
     }
     p {
-      font-size: .8em;
-      color: white;
+      font-size: .7em;
     }
     @media (max-width: 1100px) {
         font-size: 3vw;
@@ -145,7 +195,7 @@ h1, h2, h3, h4, p, ul {
     }
     @media (max-width: 650px) {
         font-size: 4.5vw;
-        margin-right: 5vw;
+        margin-right: 0;
     }
   }
   .scroll-down-link {
@@ -158,7 +208,7 @@ h1, h2, h3, h4, p, ul {
   }
   .down-arrow {
     font-size: 2em;
-    animation: bounce-down 5s infinite;
+    animation: bounce-down 2s infinite;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out;
@@ -444,6 +494,6 @@ footer {
 }
 
 
-/*REFINE ARROW TOOLTIPS*/
-/*FIGURE OUT WHY SCROLL LINKS STOP WORKIG WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
-/* MAKE RESPONSIVE TO PHONE SCREEN WIDTH*/
+/*INCORPORATE PROFILE PIC CLASS TO NEW WELCOME SECTION PIC*/
+/*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*DOUBLE CHECK RESPONSIVITY*/

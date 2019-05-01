@@ -9,7 +9,7 @@
 </head>
 <body>
   <nav class="navbar">
-    <a class="home" href="#welcome-section">Oscar<br>Fabiani</a>
+    <a class="home" href="#welcome-section">Oscar Fabiani</a>
     <ul>
       <li class="border-right"><a href="#about-section">About</a></li>
       <li class="border-right"><a href="#project-section">Projects</a></li>
@@ -18,6 +18,16 @@
   </nav>
   <main>
     <section id="welcome-section">
+      <img class="profile-pic" src="/assets/square-crop-close-resize1.jpg"></img>
+      <svg class="svg-triangle" viewBox="0 0 100 100" width='100' height='100'>
+          <defs>
+              <pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
+                <image href="/assets/square-crop-half-resize1.jpg" x="0" y="0" width="100" height="100" />
+              </pattern>
+            </defs>
+        <path d="M 90, 50 10, 90 10, 10 z" fill="url(#img1)"/>
+      </svg>
+      <img class="tri-test"></img>
       <div class="welcome-text">
           <h1>Hi, I'm <span class="color4">Oscar</span>.</h1>
           <p>a web developer</p>
@@ -30,7 +40,7 @@
             <p>I've always found solving complex problems <span class="green">captivating</span>. 
               Combining my obsessive attention to detail, penchant for optimization, and appetite for 
               exploring innovative solutions, I aim to make meaningful contributions towards 
-              enriching peoples lives through web technologies.</p>
+              enriching people's lives through web technologies.</p>
               <h1 class="skills">My Proficiencies</h1>
               <ul>
                 <li><span class="fas fa-crosshairs check"></span><span class="skill">HTML5</span></li>

@@ -90,6 +90,9 @@ h1, h2, h3, h4, p, ul {
         border-bottom: 2px solid; }
     .navbar ul .border-right {
       border-right: 1px solid; }
+  .navbar .nav-bars {
+    position: absolute;
+    opacity: 0; }
 
 .tri-test {
   opacity: 0;
@@ -376,6 +379,7 @@ footer {
   footer .copywright {
     margin-bottom: 2em; }
 
+/*INCORPORATE DELAY FOR TOOLTIPS*/
 /*INCORPORATE PROFILE PIC CLASS TO NEW WELCOME SECTION PIC*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
 /*DOUBLE CHECK RESPONSIVITY*/

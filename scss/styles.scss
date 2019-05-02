@@ -118,6 +118,10 @@ h1, h2, h3, h4, p, ul {
       border-right: 1px solid;
     }
   }
+  .nav-bars {
+    position: absolute;
+    opacity: 0;
+  }
 }
 
 
@@ -493,7 +497,7 @@ footer {
   }
 }
 
-
+/*INCORPORATE DELAY FOR TOOLTIPS*/
 /*INCORPORATE PROFILE PIC CLASS TO NEW WELCOME SECTION PIC*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
 /*DOUBLE CHECK RESPONSIVITY*/

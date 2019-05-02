@@ -31,9 +31,11 @@ h1, h2, h3, h4, p, ul {
   opacity: 0;
   width: max-content;
   transition: all 0.15s ease;
+  padding: 0;
   padding: .5em;
   color: #C8F7C5;
   background-color: #008080;
+  box-shadow: 0 0 1em 1em #008080;
   box-shadow: 0 0 0.2em 0 #e4f1fe;
   border-radius: .5em;
   font-size: .8em;
@@ -124,36 +126,35 @@ h1, h2, h3, h4, p, ul {
   background-blend-mode: color-burn;
   background-blend-mode: multiply;
   background-color: #008080;
-  background-image: url(/assets/gplay.png);
   background-image: url(/assets/strange-bullseyes.png);
+  background-image: url(/assets/gplay.png);
   background-size: unset;
   background-repeat: repeat; }
+  @media (max-width: 650px) {
+    #welcome-section {
+      flex-direction: column; } }
   #welcome-section .profile-pic {
     margin-right: 5vw;
     min-width: 16em;
     max-width: 16em;
     height: auto;
     border-radius: 50%; }
+    @media (max-width: 650px) {
+      #welcome-section .profile-pic {
+        min-width: 12em;
+        max-width: 12em;
+        margin-bottom: 2em; } }
   #welcome-section .welcome-text {
     flex-direction: column;
     margin-right: 15vw;
     margin: 0;
     color: #e4f1fe;
-    font-size: 2.5vw; }
+    font-size: 1.5em; }
     #welcome-section .welcome-text p {
       font-size: .7em; }
-    @media (max-width: 1100px) {
-      #welcome-section .welcome-text {
-        font-size: 3vw;
-        margin-right: 10vw; } }
-    @media (max-width: 900px) {
-      #welcome-section .welcome-text {
-        font-size: 4vw;
-        margin-right: 5vw; } }
     @media (max-width: 650px) {
       #welcome-section .welcome-text {
-        font-size: 4.5vw;
-        margin-right: 0; } }
+        font-size: 1.3em; } }
   #welcome-section .scroll-down-link {
     align-self: center;
     position: absolute;
@@ -355,13 +356,13 @@ h1, h2, h3, h4, p, ul {
 
 footer {
   flex-direction: column;
-  background: #C8F7C5;
-  color: #008080; }
+  background: #008080;
+  color: #C8F7C5; }
   footer a {
     margin-top: 1em;
     margin-bottom: 1em;
     height: 2em;
-    color: #008080;
+    color: #C8F7C5;
     text-decoration: none; }
   footer .up-arrow {
     font-size: 2em;

@@ -41,15 +41,16 @@ h1, h2, h3, h4, p, ul {
   opacity: 0;
   width: max-content;
   transition: all 0.15s ease;
+  padding: 0;
   padding: .5em;
   color: $color4;
   background-color: $color2;
+  box-shadow: 0 0 1em 1em $color2;
   box-shadow: 0 0 .2em 0 $color5;
   border-radius: .5em;
   font-size: .8em; 
   pointer-events: none;
 }
-
 [tooltip]:hover:before {
   opacity: 1;
   background-color: $color2;
@@ -162,16 +163,24 @@ h1, h2, h3, h4, p, ul {
   background-blend-mode: color-burn;
   background-blend-mode: multiply;
   background-color: $color2;
-  background-image: url(/assets/gplay.png);
   background-image: url(/assets/strange-bullseyes.png);
+  background-image: url(/assets/gplay.png);
   background-size: unset;
   background-repeat: repeat;
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
   .profile-pic {
     margin-right: 5vw;
     min-width: 16em;
     max-width: 16em;
     height: auto;
     border-radius: 50%;
+    @media (max-width: 650px) {
+      min-width: 12em;
+      max-width: 12em;
+      margin-bottom: 2em;
+    }
   }
   .welcome-text {
     @extend %flex-centered;
@@ -179,23 +188,14 @@ h1, h2, h3, h4, p, ul {
     margin-right: 15vw;
     margin: 0;
     color: $color5;
-    font-size: 2.5vw;
+    font-size: 1.5em;
     h1 {
     }
     p {
       font-size: .7em;
     }
-    @media (max-width: 1100px) {
-        font-size: 3vw;
-        margin-right: 10vw;
-    }
-    @media (max-width: 900px) {
-        font-size: 4vw;
-        margin-right: 5vw;
-    }
     @media (max-width: 650px) {
-        font-size: 4.5vw;
-        margin-right: 0;
+        font-size: 1.3em;
     }
   }
   .scroll-down-link {
@@ -466,14 +466,14 @@ h1, h2, h3, h4, p, ul {
 footer {
   @extend %flex-centered;
   flex-direction: column;
-  background: $color4;
-  color: $color2;
+  background: $color2;
+  color: $color4;
   a {
     @extend %flex-centered;
     margin-top: 1em;
     margin-bottom: 1em;
     height: 2em;
-    color: $color2;
+    color: $color4;
     text-decoration: none;
   }
   .up-arrow {

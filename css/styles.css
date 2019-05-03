@@ -196,8 +196,9 @@ h1, h2, h3, h4, p, ul {
       margin: 0 0 2em .5em;
       border-left: 5px solid #008080;
       padding-left: .5em;
-      width: 70vw;
-      color: #008080; }
+      width: 90vw;
+      color: #008080;
+      background-color: aqua; }
     #about-section .about-text p {
       font-size: 1.3em;
       margin: 0 1em 3em;

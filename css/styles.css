@@ -31,6 +31,7 @@ h1, h2, h3, h4, p, ul {
   opacity: 0;
   width: max-content;
   transition: all 0.15s ease;
+  /*transition-delay: .3s*/
   padding: 0;
   padding: .5em;
   color: #C8F7C5;
@@ -133,7 +134,7 @@ h1, h2, h3, h4, p, ul {
   background-image: url(/assets/gplay.png);
   background-size: unset;
   background-repeat: repeat; }
-  @media (max-width: 650px) {
+  @media (max-width: 651px) {
     #welcome-section {
       flex-direction: column; } }
   #welcome-section .profile-pic {
@@ -379,7 +380,7 @@ footer {
   footer .copywright {
     margin-bottom: 2em; }
 
-/*INCORPORATE DELAY FOR TOOLTIPS*/
+/*FIX 4/2 FOR PROJECT TILES ON LARGER SCREENS*/
 /*INCORPORATE PROFILE PIC CLASS TO NEW WELCOME SECTION PIC*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
 /*DOUBLE CHECK RESPONSIVITY*/

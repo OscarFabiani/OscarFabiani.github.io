@@ -56,6 +56,28 @@ h1, h2, h3, h4, p, ul {
   100% {
     margin-top: 0; } }
 
+.tri-test {
+  opacity: 0;
+  position: absolute;
+  height: 15em;
+  width: 15em;
+  background: url(/assets/square-crop-close-resize1.jpg) center;
+  clip-path: polygon(1% 78%, 46% 2%, 49% 0, 54% 0, 57% 2%, 98% 78%, 98% 83%, 95% 87%, 89% 88%, 6% 89%, 2% 87%, 0 83%); }
+
+.svg-triangle {
+  opacity: 0;
+  position: absolute;
+  border: 1px solid black;
+  height: 10em;
+  width: auto; }
+  .svg-triangle path {
+    stroke-width: 20;
+    stroke: url(/assets/square-crop-close-resize1.jpg);
+    stroke: rgba(0, 0, 0, 0.7);
+    stroke-opacity: unset;
+    stroke-linejoin: round;
+    stroke-linecap: round; }
+
 /*Navbar styling*/
 .navbar {
   justify-content: space-between;
@@ -95,32 +117,8 @@ h1, h2, h3, h4, p, ul {
     position: absolute;
     opacity: 0; }
 
-.tri-test {
-  opacity: 0;
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  background: url(/assets/square-crop-close-resize1.jpg) center;
-  clip-path: polygon(1% 78%, 46% 2%, 49% 0, 54% 0, 57% 2%, 98% 78%, 98% 83%, 95% 87%, 89% 88%, 6% 89%, 2% 87%, 0 83%); }
-
-.svg-triangle {
-  opacity: 0;
-  position: absolute;
-  border: 1px solid black;
-  height: 10em;
-  width: auto; }
-  .svg-triangle path {
-    stroke-width: 20;
-    stroke: url(/assets/square-crop-close-resize1.jpg);
-    stroke: rgba(0, 0, 0, 0.7);
-    stroke-opacity: unset;
-    stroke-linejoin: round;
-    stroke-linecap: round; }
-
 /*Welcome section styling*/
 #welcome-section {
-  flex-direction: column;
-  flex-direction: row;
   height: 100vh;
   /*background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover;*/
   background-blend-mode: color-dodge;
@@ -133,8 +131,13 @@ h1, h2, h3, h4, p, ul {
   background-image: url(/assets/strange-bullseyes.png);
   background-image: url(/assets/gplay.png);
   background-size: unset;
-  background-repeat: repeat; }
-  @media (max-width: 651px) {
+  background-repeat: repeat;
+  /*
+  @media (min-height: 800px) {
+    height: 800px;
+  }
+  */ }
+  @media (max-width: 651px), (orientation: portrait) {
     #welcome-section {
       flex-direction: column; } }
   #welcome-section .profile-pic {
@@ -145,6 +148,7 @@ h1, h2, h3, h4, p, ul {
     border-radius: 50%; }
     @media (max-width: 650px) {
       #welcome-section .profile-pic {
+        margin: 0;
         min-width: 12em;
         max-width: 12em;
         margin-bottom: 2em; } }
@@ -158,6 +162,7 @@ h1, h2, h3, h4, p, ul {
       font-size: .7em; }
     @media (max-width: 650px) {
       #welcome-section .welcome-text {
+        margin: 0;
         font-size: 1.3em; } }
   #welcome-section .scroll-down-link {
     align-self: center;
@@ -380,6 +385,7 @@ footer {
   footer .copywright {
     margin-bottom: 2em; }
 
+/*FIX ABOUT WIGGLE ON DOWN ARROW ANIMATION*/
 /*FIX 4/2 FOR PROJECT TILES ON LARGER SCREENS*/
 /*INCORPORATE PROFILE PIC CLASS TO NEW WELCOME SECTION PIC*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

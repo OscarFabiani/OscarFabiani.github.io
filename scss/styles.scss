@@ -1,16 +1,14 @@
 
+/*Variables*/
 $color1: #e0ebe8;
 $color2: #008080;
 $color3: #90c695;
 $color4: #C8F7C5;
 $color5: #e4f1fe;
 
-.color4 {
-  color: $color4;
-}
 
+/*Element styling*/
 html {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px;
 }
@@ -19,22 +17,28 @@ body {
   padding: 0;
   width: 100vw; /* this fixes a thin white strip along the right when window is minimized.*/
 }
-
-h1, h2, h3, h4, p, ul {
+h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
   padding: 0;
 }
 
+
+/*Reusable classes*/
 %flex-centered {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.green {
+.color4-accent {
+  color: $color4;
+}
+.green-accent {
   color: forestgreen;
   font-weight: bold;
 }
 
+
+/*Tooltip styling*/
 [tooltip]:before {
   content: attr(tooltip);
   position: absolute;
@@ -58,8 +62,8 @@ h1, h2, h3, h4, p, ul {
   margin-top: -3em;
 }
 
-/*Animations*/
 
+/*Animations*/
 @keyframes bounce-down {
   80% {
     margin-top: 0;
@@ -157,34 +161,24 @@ h1, h2, h3, h4, p, ul {
 #welcome-section {
   @extend %flex-centered;
   height: 100vh;
-  /*background: url(/assets/long-crop6-resize1.jpg) no-repeat 60% 0%/cover;*/
-  background-blend-mode: color-dodge;
-  background-blend-mode: luminosity;
-  background-blend-mode: screen;
-  background-blend-mode: hard-light;
-  background-blend-mode: color-burn;
   background-blend-mode: multiply;
   background-color: $color2;
-  background-image: url(/assets/strange-bullseyes.png);
   background-image: url(/assets/gplay.png);
-  background-size: unset;
-  background-repeat: repeat;
   .profile-pic {
-    margin-right: 5vw;
+    margin-right: 4vw;
     min-width: 16em;
     max-width: 16em;
     height: auto;
     border-radius: 50%;
+    box-shadow: 0 0 .5em .1em rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 .5em .1em rgba(0, 0, 0, 0.5);
   }
   .welcome-text {
     @extend %flex-centered;
     flex-direction: column;
-    margin-right: 15vw;
-    margin: 0;
+    margin-left: 4vw;
     color: $color5;
-    font-size: 1.5em;
-    h1 {
-    }
+    font-size: 1.7em;
     p {
       font-size: .7em;
     }
@@ -219,32 +213,14 @@ h1, h2, h3, h4, p, ul {
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {}
   /*Low Resolution Tablets, Mobiles (Landscape)*/
   @media (min-width: 480px) and (max-width: 767px) {
-    flex-direction: column;
-    font-size: .8em;
-    .profile-pic {
-      margin: 0;
-      min-width: 12em;
-      max-width: 12em;
-      margin-bottom: 2em;
-    }
-    .welcome-text {
-      margin: 0;
-      font-size: 1.3em;
-    }
+    font-size: .6em;
   }
   /*Most of the Smartphones Mobiles (Portrait)*/
   @media (min-width: 320px) and (max-width: 479px) {
     flex-direction: column;
-    font-size: .8em;
+    font-size: .6em;
     .profile-pic {
-      margin: 0;
-      min-width: 12em;
-      max-width: 12em;
-      margin-bottom: 2em;
-    }
-    .welcome-text {
-      margin: 0;
-      font-size: 1.3em;
+      margin: 0 0 2em;
     }
   }
 }
@@ -262,6 +238,7 @@ h1, h2, h3, h4, p, ul {
     h1 {
       font-size: 2em;
       color: $color2;
+      text-align: justify;
     }
     .statement {
       margin: 0 0 2em .5em;
@@ -273,7 +250,6 @@ h1, h2, h3, h4, p, ul {
     p {
       font-size: 1.3em;
       margin: 0 1em 3em;
-      width: 70vw;
       line-height: 1.5em;
     }
     .skills {
@@ -289,7 +265,7 @@ h1, h2, h3, h4, p, ul {
         font-size: 1.3em;
         font-weight: bold;
       }
-      .check {
+      .bullet {
         margin-right: .5em;
         color: $color2;
         color: forestgreen;
@@ -301,22 +277,29 @@ h1, h2, h3, h4, p, ul {
         width: 6em;
       }
     }
-    @media (max-width: 800px) {
-      font-size: 15px;
-      h1 {
-        font-size: 1.5em;
+    /*Low Resolution Tablets, Mobiles (Landscape)*/
+    @media (min-width: 480px) and (max-width: 767px) {
+      font-size: .75em;
+      p {
+        width: 80vw;
+        line-height: 1.5em;
       }
-      .statement {
-        width: 90vw;
-        line-height: 2em;
+      ul {
+        columns: 8em 2;
+        margin-left: 7em;
       }
+    }
+    /*Most of the Smartphones Mobiles (Portrait)*/
+    @media (min-width: 320px) and (max-width: 479px) {
+      font-size: .6em;
+      text-align: justify;
       p {
         width: 90vw;
         line-height: 1.5em;
       }
       ul {
         columns: 8em 2;
-        margin-left: 6em;
+        margin-left: 7em;
       }
     }
   }
@@ -347,8 +330,8 @@ h1, h2, h3, h4, p, ul {
     margin: 0 .5em 1em .5em;
     border: .2em solid $color3;
     border-radius: .5em;
-    box-shadow: 0 0 .5em .1em rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 .5em .1em rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 .5em .1em rgba(0, 0, 0, 0.5);
     width: 16em;
     color: $color2;
     background-color: $color5;
@@ -359,10 +342,9 @@ h1, h2, h3, h4, p, ul {
       justify-content: flex-start;
       flex-direction: column;
       margin-bottom: .5em;
-      border-bottom: .2em solid $color3;
+      border-bottom: .2em solid $color4;
       height: 10em;
       width: 16em;
-      color: $color1;
       color: $color4;      
       border-top-right-radius: .3em;
       border-top-left-radius: .3em;
@@ -517,6 +499,7 @@ footer {
   }
 }
 
+/*CONTINUE REFINING ABOUT-SECTION MEDIA QUERIES*/
 /*CONTINUE MAKING RESPONSIVE*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIX CROWDING ON SMALLEST SCREENSIZES (320PX WIDTH)*/

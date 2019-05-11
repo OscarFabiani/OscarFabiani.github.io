@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   padding: 0; }
 
 /*Reusable classes*/
-.navbar, .navbar ul#nav-links, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .projects .project, #project-section .projects .project a, #project-section .projects .project .project-buttons, #contact-section, #contact-section .contact-links, #contact-section .contact-method, #contact-section .contact-method a.contact-button, footer, footer a.scroll-up-link {
+.navbar, .navbar ul#nav-links, .navbar .mobile-links, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .projects .project, #project-section .projects .project a, #project-section .projects .project .project-buttons, #contact-section, #contact-section .contact-links, #contact-section .contact-method, #contact-section .contact-method a.contact-button, footer, footer a.scroll-up-link {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -26,6 +26,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
 .green-accent {
   color: forestgreen;
   font-weight: bold; }
+
+.display-none {
+  display: none; }
 
 /*Tooltip styling*/
 [tooltip]:before {
@@ -99,7 +102,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     .navbar a.home:hover {
       color: green; }
   .navbar .nav-bars {
-    visibility: hidden;
+    display: none;
     position: absolute;
     right: 0;
     padding: .5em 1em .5em;
@@ -107,43 +110,46 @@ h1, h2, h3, h4, h5, h6, p, ul {
     cursor: pointer; }
     .navbar .nav-bars:hover {
       color: green; }
-  .navbar ul#nav-links {
+  .navbar ul#nav-links, .navbar .mobile-links {
     list-style-type: none; }
-    .navbar ul#nav-links li {
+    .navbar ul#nav-links li, .navbar .mobile-links li {
       padding: 0 4vw; }
-      .navbar ul#nav-links li a {
+      .navbar ul#nav-links li a, .navbar .mobile-links li a {
         color: #008080;
         font-weight: bold;
         text-decoration: none; }
-        .navbar ul#nav-links li a:hover {
+        .navbar ul#nav-links li a:hover, .navbar .mobile-links li a:hover {
           color: green;
           border-bottom: 2px solid; }
-      .navbar ul#nav-links li.about-link, .navbar ul#nav-links li.project-link {
+      .navbar ul#nav-links li.about-link, .navbar .mobile-links li.about-link, .navbar ul#nav-links li.project-link, .navbar .mobile-links li.project-link {
         border-right: 1px solid black; }
+  .navbar .mobile-links {
+    display: none;
+    flex-direction: column; }
+    .navbar .mobile-links li {
+      padding: .5em 0;
+      width: 100vw;
+      background-color: #90c695;
+      background-color: #C8F7C5;
+      text-align: center; }
+      .navbar .mobile-links li:hover {
+        background-color: #90c695;
+        background-color: #e4f1fe; }
+      .navbar .mobile-links li a {
+        display: block; }
+        .navbar .mobile-links li a:hover {
+          border: none; }
   @media (min-width: 320px) and (max-width: 479px) {
     .navbar {
       flex-direction: column; }
       .navbar a.home {
         align-self: flex-start; }
       .navbar .nav-bars {
-        visibility: visible; }
-      .navbar ul#nav-links {
-        display: none;
-        display: unset;
-        flex-direction: column; }
-        .navbar ul#nav-links li {
-          padding: .5em 0;
-          width: 100vw;
-          background-color: #90c695;
-          background-color: #C8F7C5;
-          text-align: center; }
-          .navbar ul#nav-links li:hover {
-            background-color: #90c695;
-            background-color: #e4f1fe; }
-          .navbar ul#nav-links li a {
-            display: block; }
-            .navbar ul#nav-links li a:hover {
-              border: none; } }
+        display: unset; }
+      .navbar ul#nav-links, .navbar .mobile-links {
+        display: none; }
+      .navbar .mobile-links {
+        display: flex; } }
 
 /*Welcome section styling*/
 #welcome-section {
@@ -400,3 +406,90 @@ footer {
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*Navbar styling*/
+/*
+.navbar {
+  @extend %flex-centered;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 -.1em 4px -1px $color3 inset;
+  width: 100vw; //test with mobile
+  width: 100%;
+  background: $color4;
+  z-index: 999;
+  a.home {
+    padding: .5em 1em .5em;//new
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: $color2;
+    &:hover {
+      color: green;
+    }
+  }
+  .nav-bars {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    padding: .5em 1em .5em;//new
+    color: $color2;
+    cursor: pointer;
+    &:hover {
+      color: green;
+    }
+  }
+  ul#nav-links {
+    @extend %flex-centered;
+    list-style-type: none;
+    li {
+      padding: 0 4vw;
+      a {
+        color: $color2;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+          color: green;
+          border-bottom: 2px solid;
+        }
+      }
+      &.about-link, &.project-link {
+        border-right: 1px solid black;
+      }
+    }
+  }
+  /*Most of the Smartphones Mobiles (Portrait)*/
+/*
+  @media (min-width: 320px) and (max-width: 479px) {
+    flex-direction: column;
+    a.home {
+      align-self: flex-start;
+    }
+    .nav-bars {
+      visibility: visible;
+    }
+    ul#nav-links {
+      display: none;
+      display: unset;
+      flex-direction: column;
+      li {
+        padding: .5em 0;
+        width: 100vw;
+        background-color: $color3;
+        background-color: $color4;//survey this
+        text-align: center;
+        &:hover {
+          background-color: $color3;
+          background-color: $color5;//survey this
+        }
+        a {
+          display: block;
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+*/

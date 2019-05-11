@@ -36,6 +36,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
   color: forestgreen;
   font-weight: bold;
 }
+.display-none {
+  display: none;
+}
 
 
 /*Tooltip styling*/
@@ -124,7 +127,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
   }
   .nav-bars {
-    visibility: hidden;
+    display: none;
     position: absolute;
     right: 0;
     padding: .5em 1em .5em;//new
@@ -153,6 +156,28 @@ h1, h2, h3, h4, h5, h6, p, ul {
       }
     }
   }
+  .mobile-links {
+    @extend ul#nav-links;
+    display: none;
+    flex-direction: column;
+    li {
+      padding: .5em 0;
+      width: 100vw;
+      background-color: $color3;
+      background-color: $color4;//survey this
+      text-align: center;
+      &:hover {
+        background-color: $color3;
+        background-color: $color5;//survey this
+      }
+      a {
+        display: block;
+        &:hover {
+          border: none;
+        }
+      }
+    }
+  }
   /*Most of the Smartphones Mobiles (Portrait)*/
   @media (min-width: 320px) and (max-width: 479px) {
     flex-direction: column;
@@ -160,29 +185,13 @@ h1, h2, h3, h4, h5, h6, p, ul {
       align-self: flex-start;
     }
     .nav-bars {
-      visibility: visible;
+      display: unset;
     }
     ul#nav-links {
       display: none;
-      display: unset;
-      flex-direction: column;
-      li {
-        padding: .5em 0;
-        width: 100vw;
-        background-color: $color3;
-        background-color: $color4;//survey this
-        text-align: center;
-        &:hover {
-          background-color: $color3;
-          background-color: $color5;//survey this
-        }
-        a {
-          display: block;
-          &:hover {
-            border: none;
-          }
-        }
-      }
+    }
+    .mobile-links {
+      display: flex;
     }
   }
 }
@@ -547,3 +556,92 @@ footer {
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+
+
+
+/*Navbar styling*/
+/*
+.navbar {
+  @extend %flex-centered;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 -.1em 4px -1px $color3 inset;
+  width: 100vw; //test with mobile
+  width: 100%;
+  background: $color4;
+  z-index: 999;
+  a.home {
+    padding: .5em 1em .5em;//new
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: $color2;
+    &:hover {
+      color: green;
+    }
+  }
+  .nav-bars {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    padding: .5em 1em .5em;//new
+    color: $color2;
+    cursor: pointer;
+    &:hover {
+      color: green;
+    }
+  }
+  ul#nav-links {
+    @extend %flex-centered;
+    list-style-type: none;
+    li {
+      padding: 0 4vw;
+      a {
+        color: $color2;
+        font-weight: bold;
+        text-decoration: none;
+        &:hover {
+          color: green;
+          border-bottom: 2px solid;
+        }
+      }
+      &.about-link, &.project-link {
+        border-right: 1px solid black;
+      }
+    }
+  }
+  /*Most of the Smartphones Mobiles (Portrait)*//*
+  @media (min-width: 320px) and (max-width: 479px) {
+    flex-direction: column;
+    a.home {
+      align-self: flex-start;
+    }
+    .nav-bars {
+      visibility: visible;
+    }
+    ul#nav-links {
+      display: none;
+      display: unset;
+      flex-direction: column;
+      li {
+        padding: .5em 0;
+        width: 100vw;
+        background-color: $color3;
+        background-color: $color4;//survey this
+        text-align: center;
+        &:hover {
+          background-color: $color3;
+          background-color: $color5;//survey this
+        }
+        a {
+          display: block;
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+}
+*/

@@ -16,7 +16,7 @@
       <li class="project-link"><a href="#project-section">Projects</a></li>
       <li><a href="#contact-section">Contact</a></li>
     </ul>
-    <ul id="mobile-nav-links">
+    <ul id="mobile-nav-links" class="display-none">
       <li class="about-link"><a href="#about-section">About</a></li>
       <li class="project-link"><a href="#project-section">Projects</a></li>
       <li><a href="#contact-section">Contact</a></li>
@@ -196,12 +196,9 @@
   <script>zenscroll.setup(null, 40)</script>
   <script>
   function toggleNav() {
-    var navLinks = document.getElementById("nav-links");
-    if (navLinks.style.display === "flex") {
-      navLinks.style.display = "none";
-    } else {
-      navLinks.style.display = "flex";
-    }
+    var navLinks = document.getElementById("mobile-nav-links");
+    navLinks.classList.toggle('display-none');
+    navLinks.classList.toggle('mobile-links');
   }
   </script>
 </body>

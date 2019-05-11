@@ -214,6 +214,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
   /*Low Resolution Tablets, Mobiles (Landscape)*/
   @media (min-width: 480px) and (max-width: 767px) {
     font-size: .6em;
+    .scroll-down-link {
+      font-size: 1.5em;
+    }
   }
   /*Most of the Smartphones Mobiles (Portrait)*/
   @media (min-width: 320px) and (max-width: 479px) {
@@ -221,6 +224,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
     font-size: .6em;
     .profile-pic {
       margin: 0 0 2em;
+    }
+    .scroll-down-link {
+      font-size: 1.5em;
     }
   }
 }
@@ -235,28 +241,28 @@ h1, h2, h3, h4, h5, h6, p, ul {
     @extend %flex-centered;
     flex-direction: column;    
     margin: 4em 1.5em;
+    text-align: justify;
     h1 {
       font-size: 2em;
       color: $color2;
-      text-align: justify;
     }
-    .statement {
-      margin: 0 0 2em .5em;
+    h1.statement {
+      margin-bottom: 2em;
       border-left: 5px solid $color2;
       padding-left: .5em;
-      width: 90vw;
-      color: $color2;
+      width: 85vw;
     }
-    p {
+    p.summary {
+      width: 85vw;
       font-size: 1.3em;
       margin: 0 1em 3em;
       line-height: 1.5em;
     }
-    .skills {
+    h1.skills {
       margin-bottom: 1em;
     }
     ul {
-      columns: 10em 3;
+      columns: 3;
       margin: 0 3em 0 5em;
       li {
         @extend %flex-centered;
@@ -280,26 +286,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
     /*Low Resolution Tablets, Mobiles (Landscape)*/
     @media (min-width: 480px) and (max-width: 767px) {
       font-size: .75em;
-      p {
-        width: 80vw;
-        line-height: 1.5em;
-      }
       ul {
-        columns: 8em 2;
-        margin-left: 7em;
+        columns: 2;
+        margin-left: 8em;
       }
     }
     /*Most of the Smartphones Mobiles (Portrait)*/
     @media (min-width: 320px) and (max-width: 479px) {
       font-size: .6em;
-      text-align: justify;
-      p {
-        width: 90vw;
-        line-height: 1.5em;
-      }
       ul {
-        columns: 8em 2;
-        margin-left: 7em;
+        columns: 2;
+        margin-left: 8em;
       }
     }
   }
@@ -312,15 +309,15 @@ h1, h2, h3, h4, h5, h6, p, ul {
   @extend %flex-centered;
   flex-direction: column;
   background-color: $color2;
-  h1 {
+  h1.project-heading {
     margin: 1.5em 0;
     color: $color4;
     font-size: 2em;
-    font-weight: bold;
   }
   .projects {
     @extend %flex-centered;
     flex-wrap: wrap;
+    max-width: 53em; /*prevents more than 3 rows on wider screen sizes*/
     margin-bottom: 3em;
   }
   .project {
@@ -331,7 +328,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     border: .2em solid $color3;
     border-radius: .5em;
     box-shadow: 0 0 .5em .1em rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 .5em .1em rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 .3em .1em rgba(0, 0, 0, 0.5);
     width: 16em;
     color: $color2;
     background-color: $color5;
@@ -406,6 +403,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
       color: green;
     }
   }
+  /*Most of the Smartphones Mobiles (Portrait)*/
+  @media (min-width: 320px) and (max-width: 479px) {
+    font-size: .8em;
+  }
 }
 
 /*Contact section styling*/
@@ -428,6 +429,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 4em;
+    margin-left: 1em;
     width: 16em;
   }
   p.contact-p {
@@ -469,6 +471,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
   .linkedin-icon {
     font-size: 1.2em;
   }
+  /*Most of the Smartphones Mobiles (Portrait)*/
+  @media (min-width: 320px) and (max-width: 479px) {
+    font-size: .8em;
+  }
 }
 
 
@@ -497,12 +503,14 @@ footer {
   .copywright {
     margin-bottom: 2em;
   }
+  /*Most of the Smartphones Mobiles (Portrait)*/
+  @media (min-width: 320px) and (max-width: 479px) {
+    font-size: .8em;
+  }
 }
 
 /*CONTINUE REFINING ABOUT-SECTION MEDIA QUERIES*/
 /*CONTINUE MAKING RESPONSIVE*/
 /*ADD CORRECT PROJECT LINKS*/
-/*FIX CROWDING ON SMALLEST SCREENSIZES (320PX WIDTH)*/
-/*FIX 4/2 FOR PROJECT TILES ON LARGER SCREENS*/
 /*DOUBLE CHECK RESPONSIVITY ACROSS BROWSERS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

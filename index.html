@@ -11,12 +11,17 @@
 <body>
   <nav class="navbar">
     <a class="home" href="#welcome-section">Oscar Fabiani</a>
-    <ul>
-      <li class="border-right"><a href="#about-section">About</a></li>
-      <li class="border-right"><a href="#project-section">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <ul id="nav-links">
+      <li class="about-link"><a href="#about-section">About</a></li>
+      <li class="project-link"><a href="#project-section">Projects</a></li>
+      <li><a href="#contact-section">Contact</a></li>
     </ul>
-    <a class="fas fa-bars nav-bars"></a>
+    <ul id="mobile-nav-links">
+      <li class="about-link"><a href="#about-section">About</a></li>
+      <li class="project-link"><a href="#project-section">Projects</a></li>
+      <li><a href="#contact-section">Contact</a></li>
+    </ul>
+    <a class="fas fa-bars nav-bars" onclick="toggleNav()"></a>
   </nav>
   <main>
     <section id="welcome-section">
@@ -164,7 +169,7 @@
         </div>
       </div>
     </section>
-    <section id="contact">
+    <section id="contact-section">
       <h1 class="contact-heading">Let's work <span class="green-accent">together</span></h1>
       <p class="contact-sub-heading">contact me</p>
       <div class="contact-links">
@@ -189,5 +194,15 @@
   </main>
   <script type="text/javascript" src="/zenscroll.js"></script>
   <script>zenscroll.setup(null, 40)</script>
+  <script>
+  function toggleNav() {
+    var navLinks = document.getElementById("nav-links");
+    if (navLinks.style.display === "flex") {
+      navLinks.style.display = "none";
+    } else {
+      navLinks.style.display = "flex";
+    }
+  }
+  </script>
 </body>
 </html>

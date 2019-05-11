@@ -109,48 +109,85 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -.1em 4px -1px $color3 inset;
-  height: 2em;
+  width: 100vw; //test with mobile
   width: 100%;
   background: $color4;
   z-index: 999;
-  .home {
-    margin-left: 1em;
+  a.home {
+    padding: .5em 1em .5em;//new
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     color: $color2;
+    &:hover {
+      color: green;
+    }
   }
-  .home:hover {
-    color: green;
+  .nav-bars {
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    padding: .5em 1em .5em;//new
+    color: $color2;
+    cursor: pointer;
+    &:hover {
+      color: green;
+    }
   }
-  ul {
+  ul#nav-links {
     @extend %flex-centered;
     list-style-type: none;
-    user-select: none;
     li {
       padding: 0 4vw;
-      @media (max-width: 650px) {
-        padding: 0 2vw;
-      }
       a {
         color: $color2;
         font-weight: bold;
         text-decoration: none;
+        &:hover {
+          color: green;
+          border-bottom: 2px solid;
+        }
       }
-      a:hover {
-        color: green;
-        border-bottom: 2px solid;
+      &.about-link, &.project-link {
+        border-right: 1px solid black;
       }
-    }
-    .border-right {
-      border-right: 1px solid;
     }
   }
-  .nav-bars {
-    position: absolute;
-    opacity: 0;
+  /*Most of the Smartphones Mobiles (Portrait)*/
+  @media (min-width: 320px) and (max-width: 479px) {
+    flex-direction: column;
+    a.home {
+      align-self: flex-start;
+    }
+    .nav-bars {
+      visibility: visible;
+    }
+    ul#nav-links {
+      display: none;
+      display: unset;
+      flex-direction: column;
+      li {
+        padding: .5em 0;
+        width: 100vw;
+        background-color: $color3;
+        background-color: $color4;//survey this
+        text-align: center;
+        &:hover {
+          background-color: $color3;
+          background-color: $color5;//survey this
+        }
+        a {
+          display: block;
+          &:hover {
+            border: none;
+          }
+        }
+      }
+    }
   }
 }
+
+
 
 
 /*Welcome section styling*/
@@ -254,22 +291,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
         width: 6em;
       }
     }
-    /*Low Resolution Tablets, Mobiles (Landscape)*/
-    @media (min-width: 480px) and (max-width: 767px) {
-      font-size: .75em;
-      ul {
-        columns: 2;
-        margin-left: 8em;
-      }
-    }
-    /*Most of the Smartphones Mobiles (Portrait)*/
-    @media (min-width: 320px) and (max-width: 479px) {
-      font-size: .6em;
-      ul {
-        columns: 2;
-        margin-left: 8em;
-      }
-    }
   }
 }
 
@@ -369,15 +390,11 @@ h1, h2, h3, h4, h5, h6, p, ul {
       }
     }
   }
-  /*Most of the Smartphones Mobiles (Portrait)*/
-  @media (min-width: 320px) and (max-width: 479px) {
-    font-size: .8em;
-  }
 }
 
 /*Contact section styling*/
 
-#contact {
+#contact-section {
   @extend %flex-centered;
   flex-direction: column;
   background: $color5;
@@ -434,10 +451,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
       }
     }
   }
-  /*Most of the Smartphones Mobiles (Portrait)*/
-  @media (min-width: 320px) and (max-width: 479px) {
-    font-size: .8em;
-  }
 }
 
 
@@ -466,13 +479,6 @@ footer {
   p.copywright {
     margin-bottom: 2em;
   }
-  /*Most of the Smartphones Mobiles (Portrait)*/
-  @media (min-width: 320px) and (max-width: 479px) {
-    font-size: .8em;
-    a.scroll-up-link {
-      font-size: 1.2em;
-    }
-  }
 }
 
 
@@ -494,6 +500,15 @@ footer {
       font-size: 1.5em;
     }
   }
+  #about-section {
+    .about-text {
+      font-size: .75em;
+      ul {
+        columns: 2;
+        margin-left: 8em;
+      }
+    }
+  }
 }
 /*Most of the Smartphones Mobiles (Portrait)*/
 @media (min-width: 320px) and (max-width: 479px) {
@@ -507,11 +522,28 @@ footer {
       font-size: 1.5em;
     }
   }
+  #about-section {
+    .about-text {
+      font-size: .6em;
+      ul {
+        columns: 2;
+        margin-left: 8em;
+      }
+    }
+  }
+  #project-section, #contact-section, footer {
+    font-size: .8em;
+  }
+  footer {
+    a.scroll-up-link {
+      font-size: 1.2em;
+    }
+  }
 }
 
 
-/*CONTINUE REFINING ABOUT-SECTION MEDIA QUERIES*/
-/*CONTINUE MAKING RESPONSIVE*/
+
+/*REFACTOR NAV BAR AND ADD MOBILE DROP-DOWN NAV*/
+/*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
-/*DOUBLE CHECK RESPONSIVITY ACROSS BROWSERS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

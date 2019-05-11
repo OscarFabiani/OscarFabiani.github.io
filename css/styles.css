@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   padding: 0; }
 
 /*Reusable classes*/
-.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .project, #project-section .project .overlay, #project-section .project .project-buttons, #project-section .project .project-link, #contact, #contact .contact-links, #contact p.contact-p, #contact .contact-link-button, footer, footer a {
+.navbar, .navbar ul, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .projects .project, #project-section .projects .project a, #project-section .projects .project .project-buttons, #contact, #contact .contact-links, #contact .contact-method, #contact .contact-method a.contact-button, footer, footer a.scroll-up-link {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -29,26 +29,24 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /*Tooltip styling*/
 [tooltip]:before {
-  content: attr(tooltip);
-  position: absolute;
   opacity: 0;
-  width: max-content;
-  transition: all 0.15s ease;
-  /*transition-delay: .3s*/
-  padding: 0;
-  padding: .5em;
-  color: #C8F7C5;
-  background-color: #008080;
-  box-shadow: 0 0 1em 1em #008080;
+  position: absolute;
   box-shadow: 0 0 0.2em 0 #e4f1fe;
   border-radius: .5em;
+  width: max-content;
+  padding: .5em;
+  background-color: #008080;
+  color: #C8F7C5;
   font-size: .8em;
+  content: attr(tooltip);
+  transition: all 0.15s ease;
+  transition-delay: .3s;
   pointer-events: none; }
 
 [tooltip]:hover:before {
   opacity: 1;
-  background-color: #008080;
-  margin-top: -3em; }
+  margin-top: -3em;
+  background-color: #008080; }
 
 /*Animations*/
 @keyframes bounce-down {
@@ -125,13 +123,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   height: 100vh;
   background-blend-mode: multiply;
   background-color: #008080;
-  background-image: url(/assets/gplay.png);
-  /*Desktops*/
-  /*Laptops, Desktops*/
-  /*Tablets, Ipads (portrait)*/
-  /*Tablets, Ipads (landscape)*/
-  /*Low Resolution Tablets, Mobiles (Landscape)*/
-  /*Most of the Smartphones Mobiles (Portrait)*/ }
+  background-image: url(/assets/gplay.png); }
   #welcome-section .profile-pic {
     margin-right: 4vw;
     min-width: 16em;
@@ -162,19 +154,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     #welcome-section .down-arrow:hover {
       animation: none;
       font-size: 2.1em; }
-  @media (min-width: 480px) and (max-width: 767px) {
-    #welcome-section {
-      font-size: .6em; }
-      #welcome-section .scroll-down-link {
-        font-size: 1.5em; } }
-  @media (min-width: 320px) and (max-width: 479px) {
-    #welcome-section {
-      flex-direction: column;
-      font-size: .6em; }
-      #welcome-section .profile-pic {
-        margin: 0 0 2em; }
-      #welcome-section .scroll-down-link {
-        font-size: 1.5em; } }
 
 /*About section styling*/
 #about-section {
@@ -243,73 +222,68 @@ h1, h2, h3, h4, h5, h6, p, ul {
     max-width: 53em;
     /*prevents more than 3 rows on wider screen sizes*/
     margin-bottom: 3em; }
-  #project-section .project {
-    flex-direction: column;
-    justify-content: flex-start;
-    margin: 0 .5em 1em .5em;
-    border: 0.2em solid #90c695;
-    border-radius: .5em;
-    box-shadow: 0 0 0.5em 0.1em rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 0.3em 0.1em rgba(0, 0, 0, 0.5);
-    width: 16em;
-    color: #008080;
-    background-color: #e4f1fe; }
-    #project-section .project .overlay {
-      opacity: 0;
-      position: absolute;
-      justify-content: flex-start;
+    #project-section .projects .project {
       flex-direction: column;
-      margin-bottom: .5em;
-      border-bottom: 0.2em solid #C8F7C5;
-      height: 10em;
+      justify-content: flex-start;
+      margin: 0 .5em 1em .5em;
+      border: 0.2em solid #90c695;
+      border-radius: .5em;
+      box-shadow: 0 0 0.5em 0.1em rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 0.3em 0.1em rgba(0, 0, 0, 0.5);
       width: 16em;
-      color: #C8F7C5;
-      border-top-right-radius: .3em;
-      border-top-left-radius: .3em;
-      background-color: rgba(0, 0, 0, 0.8);
-      text-decoration: none;
-      transition: opacity .5s ease-out; }
-      #project-section .project .overlay h3 {
-        margin: .5em 0; }
-    #project-section .project .overlay:hover {
-      opacity: 1; }
-    #project-section .project .project-image {
-      opacity: 1;
-      margin-bottom: .5em;
-      border-bottom: 0.2em solid #90c695;
-      height: 10em;
-      width: 16em;
-      border-top-right-radius: .3em;
-      border-top-left-radius: .3em;
-      background-color: white; }
-    #project-section .project .project-title {
-      margin-bottom: .5em; }
-    #project-section .project .project-summary {
-      margin: 0 .5em 1em;
-      height: 4em;
-      text-align: center; }
-    #project-section .project .project-buttons {
-      justify-content: space-around;
-      margin-bottom: .5em;
-      width: 100%; }
-    #project-section .project .project-link {
-      margin: 0;
-      border: 2px solid #90c695;
-      border-radius: 50%;
-      padding: .2em;
-      width: 2em;
-      height: 2em;
       color: #008080;
-      background-color: #e0ebe8;
-      text-decoration: none;
-      cursor: pointer; }
-    #project-section .project .demo-link {
-      margin-left: .2em; }
-    #project-section .project .github-link {
-      font-size: 1.4em; }
-    #project-section .project .project-link:hover {
-      background: #C8F7C5;
-      color: green; }
+      background-color: #e4f1fe; }
+      #project-section .projects .project a {
+        text-decoration: none; }
+      #project-section .projects .project a.overlay {
+        opacity: 0;
+        justify-content: flex-start;
+        flex-direction: column;
+        position: absolute;
+        border-top-right-radius: .3em;
+        border-top-left-radius: .3em;
+        height: 10em;
+        width: 16em;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #C8F7C5;
+        transition: opacity .5s ease-out; }
+        #project-section .projects .project a.overlay h3 {
+          margin: .5em 0; }
+        #project-section .projects .project a.overlay:hover {
+          opacity: 1; }
+      #project-section .projects .project img.project-image {
+        margin-bottom: .5em;
+        border-top-right-radius: .3em;
+        border-top-left-radius: .3em;
+        border-bottom: 0.2em solid #90c695;
+        height: 10em;
+        width: 16em; }
+      #project-section .projects .project h4.project-title {
+        margin-bottom: .5em; }
+      #project-section .projects .project p.project-summary {
+        margin-bottom: 1em;
+        height: 4em;
+        padding: 0 .5em;
+        text-align: center; }
+      #project-section .projects .project .project-buttons {
+        justify-content: space-around;
+        margin-bottom: .5em;
+        width: 100%; }
+        #project-section .projects .project .project-buttons a.project-link {
+          border: 2px solid #90c695;
+          border-radius: 50%;
+          padding: .2em;
+          width: 2em;
+          height: 2em;
+          background-color: #e0ebe8;
+          color: #008080; }
+          #project-section .projects .project .project-buttons a.project-link span.demo-link {
+            margin-left: .2em; }
+          #project-section .projects .project .project-buttons a.project-link span.github-link {
+            font-size: 1.4em; }
+          #project-section .projects .project .project-buttons a.project-link:hover {
+            background: #C8F7C5;
+            color: green; }
   @media (min-width: 320px) and (max-width: 479px) {
     #project-section {
       font-size: .8em; } }
@@ -319,48 +293,44 @@ h1, h2, h3, h4, h5, h6, p, ul {
   flex-direction: column;
   background: #e4f1fe;
   /*Most of the Smartphones Mobiles (Portrait)*/ }
-  #contact h1 {
+  #contact h1.contact-heading {
     margin-top: 2em;
     color: #008080;
     font-size: 2em; }
-  #contact p.contact-blurb {
+  #contact p.contact-sub-heading {
     margin-bottom: 4em;
     color: #008080; }
   #contact .contact-links {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 4em;
-    margin-left: 1em;
-    width: 16em; }
-  #contact p.contact-p {
+    margin-bottom: 4em; }
+  #contact .contact-method {
     margin-bottom: 2em; }
-  #contact .contact-link-button {
-    height: 2.5em;
-    width: 2.5em;
-    border: 0.1em solid #90c695;
-    border-radius: 50%;
-    background: #e0ebe8;
-    color: #008080;
-    font-size: 1em;
-    text-decoration: none; }
-    #contact .contact-link-button:hover {
-      background: #C8F7C5;
-      color: green; }
-  #contact .contact-link {
-    margin-left: 1em;
-    height: 1.3em;
-    color: #008080;
-    text-decoration: none;
-    box-sizing: border-box; }
-    #contact .contact-link:hover {
-      border-bottom: .1em solid;
-      color: forestgreen; }
-  #contact .mail-icon {
-    font-size: 1.1em; }
-  #contact .github-icon {
-    font-size: 1.3em; }
-  #contact .linkedin-icon {
-    font-size: 1.2em; }
+    #contact .contact-method a {
+      color: #008080;
+      text-decoration: none; }
+    #contact .contact-method a.contact-button {
+      height: 2.5em;
+      width: 2.5em;
+      border: 0.1em solid #90c695;
+      border-radius: 50%;
+      background: #e0ebe8; }
+      #contact .contact-method a.contact-button:hover {
+        background: #C8F7C5;
+        color: green; }
+      #contact .contact-method a.contact-button .mail-icon {
+        font-size: 1.1em; }
+      #contact .contact-method a.contact-button .github-icon {
+        font-size: 1.3em; }
+      #contact .contact-method a.contact-button .linkedin-icon {
+        font-size: 1.2em; }
+    #contact .contact-method a.contact-link {
+      margin-left: 1em;
+      height: 1.3em;
+      box-sizing: border-box; }
+      #contact .contact-method a.contact-link:hover {
+        border-bottom: .1em solid;
+        color: forestgreen; }
   @media (min-width: 320px) and (max-width: 479px) {
     #contact {
       font-size: .8em; } }
@@ -370,24 +340,48 @@ footer {
   background: #008080;
   color: #C8F7C5;
   /*Most of the Smartphones Mobiles (Portrait)*/ }
-  footer a {
+  footer a.scroll-up-link {
     margin-top: 1em;
     margin-bottom: 1em;
     height: 2em;
     color: #C8F7C5;
     text-decoration: none; }
-  footer .up-arrow {
+  footer span.up-arrow {
     font-size: 2em;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out; }
-    footer .up-arrow:hover {
+    footer span.up-arrow:hover {
       font-size: 2.1em; }
-  footer .copywright {
+  footer p.copywright {
     margin-bottom: 2em; }
   @media (min-width: 320px) and (max-width: 479px) {
     footer {
-      font-size: .8em; } }
+      font-size: .8em; }
+      footer a.scroll-up-link {
+        font-size: 1.2em; } }
+
+/*Media Queries*/
+/*Desktops*/
+/*Laptops, Desktops*/
+/*Tablets, Ipads (portrait)*/
+/*Tablets, Ipads (landscape)*/
+/*Low Resolution Tablets, Mobiles (Landscape)*/
+@media (min-width: 480px) and (max-width: 767px) {
+  #welcome-section {
+    font-size: .6em; }
+    #welcome-section .scroll-down-link {
+      font-size: 1.5em; } }
+
+/*Most of the Smartphones Mobiles (Portrait)*/
+@media (min-width: 320px) and (max-width: 479px) {
+  #welcome-section {
+    flex-direction: column;
+    font-size: .6em; }
+    #welcome-section .profile-pic {
+      margin: 0 0 2em; }
+    #welcome-section .scroll-down-link {
+      font-size: 1.5em; } }
 
 /*CONTINUE REFINING ABOUT-SECTION MEDIA QUERIES*/
 /*CONTINUE MAKING RESPONSIVE*/

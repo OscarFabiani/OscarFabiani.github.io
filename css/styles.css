@@ -132,6 +132,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
       background-color: #90c695;
       background-color: #C8F7C5;
       text-align: center; }
+      .navbar .mobile-links li.about-link, .navbar .mobile-links li.project-link {
+        box-shadow: 0 0.1em 4px -1px #90c695 inset; }
+      .navbar .mobile-links li.contact-link {
+        box-shadow: 0 -0.1em 4px -1px #90c695 inset, 0 0.1em 4px -1px #90c695 inset; }
       .navbar .mobile-links li:hover {
         background-color: #90c695;
         background-color: #e4f1fe; }
@@ -402,7 +406,10 @@ footer {
   footer a.scroll-up-link {
     font-size: 1.2em; } }
 
-/*REFACTOR NAV BAR AND ADD MOBILE DROP-DOWN NAV*/
+/*REFINE NAV BAR AND MOBILE DROP-DOWN NAV*/
+/*FIX THIN WHITE STRIP ON MY PHONE*/
+/*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
+/*LOOK INTO GREYING OUT SITE WHEN MOBILE MENU IS EXPANDED*/
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

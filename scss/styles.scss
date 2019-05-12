@@ -166,6 +166,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
       background-color: $color3;
       background-color: $color4;//survey this
       text-align: center;
+      &.about-link, &.project-link {
+        box-shadow: 0 .1em 4px -1px $color3 inset
+      }
+      &.contact-link {
+        box-shadow: 0 -.1em 4px -1px $color3 inset, 0 .1em 4px -1px $color3 inset;
+      }
       &:hover {
         background-color: $color3;
         background-color: $color5;//survey this
@@ -552,7 +558,10 @@ footer {
 
 
 
-/*REFACTOR NAV BAR AND ADD MOBILE DROP-DOWN NAV*/
+/*REFINE NAV BAR AND MOBILE DROP-DOWN NAV*/
+/*FIX THIN WHITE STRIP ON MY PHONE*/
+/*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
+/*LOOK INTO GREYING OUT SITE WHEN MOBILE MENU IS EXPANDED*/
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

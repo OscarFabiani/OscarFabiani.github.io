@@ -14,14 +14,14 @@
     <ul id="nav-links">
       <li class="about-link"><a href="#about-section">About</a></li>
       <li class="project-link"><a href="#project-section">Projects</a></li>
-      <li><a href="#contact-section">Contact</a></li>
+      <li class="contact-link"><a href="#contact-section">Contact</a></li>
     </ul>
     <ul id="mobile-nav-links" class="display-none">
       <li class="about-link"><a href="#about-section">About</a></li>
       <li class="project-link"><a href="#project-section">Projects</a></li>
-      <li><a href="#contact-section">Contact</a></li>
+      <li class="contact-link"><a href="#contact-section">Contact</a></li>
     </ul>
-    <a class="fas fa-bars nav-bars" onclick="toggleNav()"></a>
+    <a id="mobile-menu-expander" class="fas fa-bars nav-bars" onclick="toggleNav()"></a>
   </nav>
   <main>
     <section id="welcome-section">
@@ -196,9 +196,11 @@
   <script>zenscroll.setup(null, 40)</script>
   <script>
   function toggleNav() {
-    var navLinks = document.getElementById("mobile-nav-links");
+    let navLinks = document.getElementById("mobile-nav-links");
+    let expander = document.getElementById("mobile-menu-expander");
     navLinks.classList.toggle('display-none');
     navLinks.classList.toggle('mobile-links');
+    expander.classList.toggle('fa-times');    
   }
   </script>
 </body>

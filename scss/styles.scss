@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     position: absolute;
     right: 0;
     top: 0; //Added for Firefox
-    padding: .5em 1em .5em;//new
+    padding: .5em 1em .5em;
     color: $color2;
     cursor: pointer;
     &:hover {
@@ -322,6 +322,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     @extend %flex-centered;
     flex-wrap: wrap;
     max-width: 53em; /*prevents more than 3 rows on wider screen sizes*/
+    width: 100%; //Needed for flex-wrap for IE;
     margin-bottom: 3em;
     .project {
       position: relative; //Needed for FIrefox
@@ -375,6 +376,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       p.project-summary {
         margin-bottom: 1em;
         height: 4em;
+        width: 100%; //Needed for IE
         padding: 0 .5em;
         text-align: center;
       }
@@ -563,9 +565,9 @@ footer {
 
 
 /*REFINE NAV BAR AND MOBILE DROP-DOWN NAV*/
-/*FIX THIN WHITE STRIP ON MY PHONE*/
+/*FIX SIDE GAP*/
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*LOOK INTO GREYING OUT SITE WHEN MOBILE MENU IS EXPANDED*/
+/*MIGRATE REMAINING MEDIA QUERIES*/
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

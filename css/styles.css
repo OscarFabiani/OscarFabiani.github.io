@@ -241,6 +241,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     flex-wrap: wrap;
     max-width: 53em;
     /*prevents more than 3 rows on wider screen sizes*/
+    width: 100%;
     margin-bottom: 3em; }
     #project-section .projects .project {
       position: relative;
@@ -286,6 +287,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       #project-section .projects .project p.project-summary {
         margin-bottom: 1em;
         height: 4em;
+        width: 100%;
         padding: 0 .5em;
         text-align: center; }
       #project-section .projects .project .project-buttons {
@@ -412,9 +414,9 @@ footer {
     font-size: 1.2em; } }
 
 /*REFINE NAV BAR AND MOBILE DROP-DOWN NAV*/
-/*FIX THIN WHITE STRIP ON MY PHONE*/
+/*FIX SIDE GAP*/
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*LOOK INTO GREYING OUT SITE WHEN MOBILE MENU IS EXPANDED*/
+/*MIGRATE REMAINING MEDIA QUERIES*/
 /*CHECK CROSS BROWSER COMPATIBILITY*/
 /*ADD CORRECT PROJECT LINKS*/
 /*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/

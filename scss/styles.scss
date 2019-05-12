@@ -44,10 +44,14 @@ h1, h2, h3, h4, h5, h6, p, ul {
 /*Tooltip styling*/
 [tooltip]:before {
   opacity: 0;
-  position: absolute;
+  position: absolute; //Needed for Firefox
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 0 .2em 0 $color5;
   border-radius: .5em;
   width: max-content;
+  width: -moz-max-content; //Needed for Firefox
   padding: .5em;
   background-color: $color2;
   color: $color4;
@@ -59,47 +63,22 @@ h1, h2, h3, h4, h5, h6, p, ul {
 }
 [tooltip]:hover:before {
   opacity: 1;
-  margin-top: -3em;
+  bottom: 3.3em;
   background-color: $color2;
 }
 
 
 /*Animations*/
+
 @keyframes bounce-down {
   80% {
-    margin-top: 0;
+    bottom: 1em;
   }
   90% {
-    margin-top: .3em;
+    bottom: 0;
   }
   100% {
-    margin-top: 0;
-  }
-}
-
-
-.tri-test {
-  opacity: 0;
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  background: url(/assets/square-crop-close-resize1.jpg) center;
-  clip-path: polygon(1% 78%, 46% 2%, 49% 0, 54% 0, 57% 2%, 98% 78%, 98% 83%, 95% 87%, 89% 88%, 6% 89%, 2% 87%, 0 83%);
-}
-
-.svg-triangle {
-  opacity: 0;
-  position: absolute;
-  border: 1px solid black;
-  height: 10em;
-  width: auto;
-  & path {
-    stroke-width: 20;
-    stroke: url(/assets/square-crop-close-resize1.jpg);
-    stroke: rgba(0, 0, 0, 0.7);
-    stroke-opacity: unset;
-    stroke-linejoin: round;
-    stroke-linecap: round;
+    bottom: 1em;
   }
 }
 
@@ -130,6 +109,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: none;
     position: absolute;
     right: 0;
+    top: 0; //Added for Firefox
     padding: .5em 1em .5em;//new
     color: $color2;
     cursor: pointer;
@@ -161,7 +141,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: none;
     flex-direction: column;
     li {
-      padding: .5em 0;
       width: 100vw;
       background-color: $color3;
       background-color: $color4;//survey this
@@ -178,10 +157,20 @@ h1, h2, h3, h4, h5, h6, p, ul {
       }
       a {
         display: block;
+        padding: .5em 0;
         &:hover {
           border: none;
         }
       }
+    }
+    .menu-collapser-overlay {
+      position: fixed;
+      top: 3em;
+      height: 100vh;
+      width: 100vw;
+      opacity: 0.4;
+      background-color: black;
+      z-index: -1;
     }
   }
   /*Most of the Smartphones Mobiles (Portrait)*/
@@ -209,6 +198,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 
 #welcome-section {
+  position: relative;
   @extend %flex-centered;
   height: 100vh;
   background-blend-mode: multiply;
@@ -236,20 +226,26 @@ h1, h2, h3, h4, h5, h6, p, ul {
   .scroll-down-link {
     @extend %flex-centered;
     position: absolute;
-    margin-top: 43vh;
+    bottom: 1em; //Better than using margin-top for Firefox
+    left: 50%; //Needed for Firefox;
     color: $color4;
     text-decoration: none;
-  }
-  .down-arrow {
-    position: absolute;
-    font-size: 2em;
     animation: bounce-down 2s infinite;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out;
     &:hover {
       animation: none;
-      font-size: 2.1em;
+    }
+  }
+  .down-arrow {
+    font-size: 2em;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out;
+    &:hover {
+      animation: none;
+      font-size: 2.2em;
     }
   }
 }
@@ -286,6 +282,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     }
     ul {
       columns: 3;
+      -moz-columns: 3; //Needed for Firefox
       margin: 0 3em 0 5em;
       li {
         @extend %flex-centered;
@@ -327,6 +324,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     max-width: 53em; /*prevents more than 3 rows on wider screen sizes*/
     margin-bottom: 3em;
     .project {
+      position: relative; //Needed for FIrefox
       @extend %flex-centered;
       flex-direction: column;
       justify-content: flex-start;
@@ -347,6 +345,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
         justify-content: flex-start;
         flex-direction: column;
         position: absolute;
+        left: 0; //Needed for FIrefox
+        top: 0; //Needed for FIrefox
         border-top-right-radius: .3em;
         border-top-left-radius: .3em;
         height: 10em;
@@ -384,6 +384,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         margin-bottom: .5em;
         width: 100%;
         a.project-link {
+          position: relative; //Needed for tooltip for Firefox 
           border: 2px solid $color3;
           border-radius: 50%;
           padding: .2em;
@@ -436,6 +437,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       text-decoration: none;
     }
     a.contact-button {
+      position: relative;
       @extend %flex-centered;
       height: 2.5em;
       width: 2.5em;
@@ -475,6 +477,7 @@ footer {
   background: $color2;
   color: $color4;
   a.scroll-up-link {
+    position: relative; //Needed for tooltip for Firefox
     @extend %flex-centered;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -542,6 +545,7 @@ footer {
       font-size: .6em;
       ul {
         columns: 2;
+        -moz-columns: 2; //Needed for Firefox
         margin-left: 8em;
       }
     }

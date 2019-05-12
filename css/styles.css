@@ -34,9 +34,13 @@ h1, h2, h3, h4, h5, h6, p, ul {
 [tooltip]:before {
   opacity: 0;
   position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 0 0.2em 0 #e4f1fe;
   border-radius: .5em;
   width: max-content;
+  width: -moz-max-content;
   padding: .5em;
   background-color: #008080;
   color: #C8F7C5;
@@ -48,39 +52,17 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 [tooltip]:hover:before {
   opacity: 1;
-  margin-top: -3em;
+  bottom: 3.3em;
   background-color: #008080; }
 
 /*Animations*/
 @keyframes bounce-down {
   80% {
-    margin-top: 0; }
+    bottom: 1em; }
   90% {
-    margin-top: .3em; }
+    bottom: 0; }
   100% {
-    margin-top: 0; } }
-
-.tri-test {
-  opacity: 0;
-  position: absolute;
-  height: 15em;
-  width: 15em;
-  background: url(/assets/square-crop-close-resize1.jpg) center;
-  clip-path: polygon(1% 78%, 46% 2%, 49% 0, 54% 0, 57% 2%, 98% 78%, 98% 83%, 95% 87%, 89% 88%, 6% 89%, 2% 87%, 0 83%); }
-
-.svg-triangle {
-  opacity: 0;
-  position: absolute;
-  border: 1px solid black;
-  height: 10em;
-  width: auto; }
-  .svg-triangle path {
-    stroke-width: 20;
-    stroke: url(/assets/square-crop-close-resize1.jpg);
-    stroke: rgba(0, 0, 0, 0.7);
-    stroke-opacity: unset;
-    stroke-linejoin: round;
-    stroke-linecap: round; }
+    bottom: 1em; } }
 
 /*Navbar styling*/
 .navbar {
@@ -105,6 +87,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: none;
     position: absolute;
     right: 0;
+    top: 0;
     padding: .5em 1em .5em;
     color: #008080;
     cursor: pointer; }
@@ -127,7 +110,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     display: none;
     flex-direction: column; }
     .navbar .mobile-links li {
-      padding: .5em 0;
       width: 100vw;
       background-color: #90c695;
       background-color: #C8F7C5;
@@ -140,9 +122,18 @@ h1, h2, h3, h4, h5, h6, p, ul {
         background-color: #90c695;
         background-color: #e4f1fe; }
       .navbar .mobile-links li a {
-        display: block; }
+        display: block;
+        padding: .5em 0; }
         .navbar .mobile-links li a:hover {
           border: none; }
+    .navbar .mobile-links .menu-collapser-overlay {
+      position: fixed;
+      top: 3em;
+      height: 100vh;
+      width: 100vw;
+      opacity: 0.4;
+      background-color: black;
+      z-index: -1; }
   @media (min-width: 320px) and (max-width: 479px) {
     .navbar {
       flex-direction: column; }
@@ -157,6 +148,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
 
 /*Welcome section styling*/
 #welcome-section {
+  position: relative;
   height: 100vh;
   background-blend-mode: multiply;
   background-color: #008080;
@@ -178,19 +170,24 @@ h1, h2, h3, h4, h5, h6, p, ul {
       font-size: .7em; }
   #welcome-section .scroll-down-link {
     position: absolute;
-    margin-top: 43vh;
+    bottom: 1em;
+    left: 50%;
     color: #C8F7C5;
-    text-decoration: none; }
-  #welcome-section .down-arrow {
-    position: absolute;
-    font-size: 2em;
+    text-decoration: none;
     animation: bounce-down 2s infinite;
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: ease-out; }
+    #welcome-section .scroll-down-link:hover {
+      animation: none; }
+  #welcome-section .down-arrow {
+    font-size: 2em;
     transition-property: all;
     transition-duration: .2s;
     transition-timing-function: ease-out; }
     #welcome-section .down-arrow:hover {
       animation: none;
-      font-size: 2.1em; }
+      font-size: 2.2em; }
 
 /*About section styling*/
 #about-section {
@@ -216,6 +213,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       margin-bottom: 1em; }
     #about-section .about-text ul {
       columns: 3;
+      -moz-columns: 3;
       margin: 0 3em 0 5em; }
       #about-section .about-text ul li {
         margin-bottom: 1em;
@@ -245,6 +243,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     /*prevents more than 3 rows on wider screen sizes*/
     margin-bottom: 3em; }
     #project-section .projects .project {
+      position: relative;
       flex-direction: column;
       justify-content: flex-start;
       margin: 0 .5em 1em .5em;
@@ -262,6 +261,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
         justify-content: flex-start;
         flex-direction: column;
         position: absolute;
+        left: 0;
+        top: 0;
         border-top-right-radius: .3em;
         border-top-left-radius: .3em;
         height: 10em;
@@ -292,6 +293,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         margin-bottom: .5em;
         width: 100%; }
         #project-section .projects .project .project-buttons a.project-link {
+          position: relative;
           border: 2px solid #90c695;
           border-radius: 50%;
           padding: .2em;
@@ -328,6 +330,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       color: #008080;
       text-decoration: none; }
     #contact-section .contact-method a.contact-button {
+      position: relative;
       height: 2.5em;
       width: 2.5em;
       border: 0.1em solid #90c695;
@@ -355,6 +358,7 @@ footer {
   background: #008080;
   color: #C8F7C5; }
   footer a.scroll-up-link {
+    position: relative;
     margin-top: 1em;
     margin-bottom: 1em;
     height: 2em;
@@ -400,6 +404,7 @@ footer {
     font-size: .6em; }
     #about-section .about-text ul {
       columns: 2;
+      -moz-columns: 2;
       margin-left: 8em; }
   #project-section, #contact-section, footer {
     font-size: .8em; }

@@ -71,6 +71,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   /*width: 100vw;*/
   width: 100%;
   background: #C8F7C5;
+  box-sizing: border-box;
   z-index: 999; }
   .navbar a.home-link {
     padding: .5em 1em .5em;

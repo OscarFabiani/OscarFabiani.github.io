@@ -93,6 +93,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   /*width: 100vw;*///test with mobile
   width: 100%;
   background: $color4;
+  box-sizing: border-box;
   z-index: 999;
   a.home-link {
     padding: .5em 1em .5em;//new

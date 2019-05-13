@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -0.1em 4px -1px #90c695 inset;
-  width: 100vw;
+  /*width: 100vw;*/
   width: 100%;
   background: #C8F7C5;
   z-index: 999; }
@@ -106,9 +106,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
       border-right: 1px solid black; }
   .navbar .mobile-menu {
     display: none;
-    position: relative; }
+    position: relative;
+    width: 100%; }
     .navbar .mobile-menu ul li {
-      width: 100vw;
+      width: 100%;
       background-color: #C8F7C5;
       text-align: center; }
       .navbar .mobile-menu ul li.about-link, .navbar .mobile-menu ul li.project-link {
@@ -125,7 +126,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       top: 0;
       left: 0;
       height: 100vh;
-      width: 100vw;
+      width: 100%;
       opacity: 0.4;
       background-color: black;
       z-index: -1; }

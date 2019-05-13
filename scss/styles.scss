@@ -90,7 +90,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -.1em 4px -1px $color3 inset;
-  width: 100vw; //test with mobile
+  /*width: 100vw;*///test with mobile
   width: 100%;
   background: $color4;
   z-index: 999;
@@ -146,11 +146,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
   .mobile-menu {
     display: none;
     position: relative;
+    width: 100%;
     ul {
       li {
         //This might be better substitutes for cascading width: 100% declarations
         //as it may be the cause of the sid gap.
-        width: 100vw;
+        width: 100%;
         background-color: $color4;
         text-align: center;
         &.about-link, &.project-link {
@@ -173,7 +174,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       top: 0;
       left: 0; //probably needed for Firefox and IE TESTME
       height: 100vh;
-      width: 100vw;
+      width: 100%;
       opacity: 0.4;
       background-color: black;
       z-index: -1;

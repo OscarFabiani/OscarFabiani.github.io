@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   padding: 0; }
 
 /*Reusable classes*/
-.navbar, .navbar ul#nav-links, .navbar .mobile-links, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .projects .project, #project-section .projects .project a, #project-section .projects .project .project-buttons, #contact-section, #contact-section .contact-links, #contact-section .contact-method, #contact-section .contact-method a.contact-button, footer, footer a.scroll-up-link {
+.navbar, .navbar ul.nav-links, #welcome-section, #welcome-section .welcome-text, #welcome-section .scroll-down-link, #about-section, #about-section .about-text, #about-section .about-text ul li, #about-section .about-text ul .skill, #project-section, #project-section .projects, #project-section .projects .project, #project-section .projects .project a, #project-section .projects .project .project-buttons, #contact-section, #contact-section .contact-links, #contact-section .contact-method, #contact-section .contact-method a.contact-button, footer, footer a.scroll-up-link {
   display: flex;
   align-items: center;
   justify-content: center; }
@@ -73,15 +73,14 @@ h1, h2, h3, h4, h5, h6, p, ul {
   width: 100vw;
   width: 100%;
   background: #C8F7C5;
-  z-index: 999;
-  /*Most of the Smartphones Mobiles (Portrait)*/ }
-  .navbar a.home {
+  z-index: 999; }
+  .navbar a.home-link {
     padding: .5em 1em .5em;
     text-align: center;
     text-decoration: none;
     font-weight: bold;
     color: #008080; }
-    .navbar a.home:hover {
+    .navbar a.home-link:hover {
       color: green; }
   .navbar .nav-bars {
     display: none;
@@ -93,58 +92,45 @@ h1, h2, h3, h4, h5, h6, p, ul {
     cursor: pointer; }
     .navbar .nav-bars:hover {
       color: green; }
-  .navbar ul#nav-links, .navbar .mobile-links {
+  .navbar ul {
     list-style-type: none; }
-    .navbar ul#nav-links li, .navbar .mobile-links li {
-      padding: 0 4vw; }
-      .navbar ul#nav-links li a, .navbar .mobile-links li a {
-        color: #008080;
-        font-weight: bold;
-        text-decoration: none; }
-        .navbar ul#nav-links li a:hover, .navbar .mobile-links li a:hover {
-          color: green;
-          border-bottom: 2px solid; }
-      .navbar ul#nav-links li.about-link, .navbar .mobile-links li.about-link, .navbar ul#nav-links li.project-link, .navbar .mobile-links li.project-link {
-        border-right: 1px solid black; }
-  .navbar .mobile-links {
+    .navbar ul li a {
+      color: #008080;
+      font-weight: bold;
+      text-decoration: none; }
+      .navbar ul li a:hover {
+        color: green; }
+  .navbar ul.nav-links li {
+    padding: 0 4vw; }
+    .navbar ul.nav-links li a:hover {
+      border-bottom: 2px solid; }
+    .navbar ul.nav-links li.about-link, .navbar ul.nav-links li.project-link {
+      border-right: 1px solid black; }
+  .navbar .mobile-menu {
     display: none;
-    flex-direction: column; }
-    .navbar .mobile-links li {
+    position: relative; }
+    .navbar .mobile-menu ul li {
       width: 100vw;
-      background-color: #90c695;
       background-color: #C8F7C5;
       text-align: center; }
-      .navbar .mobile-links li.about-link, .navbar .mobile-links li.project-link {
+      .navbar .mobile-menu ul li.about-link, .navbar .mobile-menu ul li.project-link {
         box-shadow: 0 0.1em 4px -1px #90c695 inset; }
-      .navbar .mobile-links li.contact-link {
+      .navbar .mobile-menu ul li.contact-link {
         box-shadow: 0 -0.1em 4px -1px #90c695 inset, 0 0.1em 4px -1px #90c695 inset; }
-      .navbar .mobile-links li:hover {
-        background-color: #90c695;
+      .navbar .mobile-menu ul li:hover {
         background-color: #e4f1fe; }
-      .navbar .mobile-links li a {
+      .navbar .mobile-menu ul li a {
         display: block;
         padding: .5em 0; }
-        .navbar .mobile-links li a:hover {
-          border: none; }
-    .navbar .mobile-links .menu-collapser-overlay {
-      position: fixed;
-      top: 3em;
+    .navbar .mobile-menu .menu-collapser-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
       height: 100vh;
       width: 100vw;
       opacity: 0.4;
       background-color: black;
       z-index: -1; }
-  @media (min-width: 320px) and (max-width: 479px) {
-    .navbar {
-      flex-direction: column; }
-      .navbar a.home {
-        align-self: flex-start; }
-      .navbar .nav-bars {
-        display: unset; }
-      .navbar ul#nav-links, .navbar .mobile-links {
-        display: none; }
-      .navbar .mobile-links {
-        display: flex; } }
 
 /*Welcome section styling*/
 #welcome-section {
@@ -395,6 +381,14 @@ footer {
 
 /*Most of the Smartphones Mobiles (Portrait)*/
 @media (min-width: 320px) and (max-width: 479px) {
+  .navbar {
+    flex-direction: column; }
+    .navbar a.home-link {
+      align-self: flex-start; }
+    .navbar .nav-bars, .navbar .mobile-menu {
+      display: unset; }
+    .navbar ul.nav-links {
+      display: none; }
   #welcome-section {
     flex-direction: column;
     font-size: .6em; }

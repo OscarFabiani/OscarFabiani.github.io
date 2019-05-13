@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -0.1em 4px -1px #90c695 inset;
-  /*width: 100vw;*/
+  height: 2.25em;
   width: 100%;
   background: #C8F7C5;
   box-sizing: border-box;
@@ -125,7 +125,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     .navbar .mobile-menu .menu-collapser-overlay {
       position: absolute;
       top: 0;
-      left: 0;
       height: 100vh;
       width: 100%;
       opacity: 0.4;
@@ -387,7 +386,7 @@ footer {
     .navbar a.home-link {
       align-self: flex-start; }
     .navbar .nav-bars, .navbar .mobile-menu {
-      display: unset; }
+      display: block; }
     .navbar ul.nav-links {
       display: none; }
   #welcome-section {
@@ -408,8 +407,7 @@ footer {
   footer a.scroll-up-link {
     font-size: 1.2em; } }
 
-/*FIX SIDE GAP*/
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*CHECK CROSS BROWSER COMPATIBILITY*/
+/*FIX SIDE GAP*/
 /*ADD CORRECT PROJECT LINKS*/
-/*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*ADD RESUME LINK(S)*/

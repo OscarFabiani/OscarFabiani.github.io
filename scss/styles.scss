@@ -90,10 +90,10 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -.1em 4px -1px $color3 inset;
-  /*width: 100vw;*///test with mobile
+  height: 2.25em; //Added this trying to fix nav scrunch on mobile
   width: 100%;
   background: $color4;
-  box-sizing: border-box;
+  box-sizing: border-box; //Added this trying to fix mobile side gap ( to possibly adjust for padding).
   z-index: 999;
   a.home-link {
     padding: .5em 1em .5em;//new
@@ -150,8 +150,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     width: 100%;
     ul {
       li {
-        //This might be better substitutes for cascading width: 100% declarations
-        //as it may be the cause of the sid gap.
         width: 100%;
         background-color: $color4;
         text-align: center;
@@ -173,7 +171,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
     .menu-collapser-overlay {
       position: absolute;
       top: 0;
-      left: 0; //probably needed for Firefox and IE TESTME
       height: 100vh;
       width: 100%;
       opacity: 0.4;
@@ -531,7 +528,7 @@ footer {
       align-self: flex-start;
     }
     .nav-bars, .mobile-menu {
-      display: unset;
+      display: block; //added for IE
     }
     ul.nav-links {
       display: none;
@@ -569,8 +566,7 @@ footer {
 
 
 
-/*FIX SIDE GAP*/
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*CHECK CROSS BROWSER COMPATIBILITY*/
+/*FIX SIDE GAP*/
 /*ADD CORRECT PROJECT LINKS*/
-/*FIGURE OUT WHY SCROLL LINKS STOP WORKING WHEN AT THE BOTTOM OF THE PAGE (SOMETHING TO DO WITH SETUP FUNCTION)*/
+/*ADD RESUME LINK(S)*/

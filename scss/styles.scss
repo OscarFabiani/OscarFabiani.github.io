@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
     width: 100%; //Needed for flex-wrap for IE;
     margin-bottom: 3em;
     .project {
-      position: relative; //Needed for FIrefox
+      position: relative; //Needed for Firefox
       @extend %flex-centered;
       flex-direction: column;
       justify-content: flex-start;
@@ -567,6 +567,5 @@ footer {
 
 
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*FIX SIDE GAP*/
-/*ADD CORRECT PROJECT LINKS*/
+/*FIX SIDE GAP ON MY PHONE*/
 /*ADD RESUME LINK(S)*/

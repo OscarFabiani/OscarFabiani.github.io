@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   left: 0; //added for gap issue
   box-shadow: 0 -.1em 4px -1px $color3 inset;
   height: 2.25em; //Added this trying to fix nav scrunch on mobile
-  width: 100%;
+  width: 80%;
   background: $color4;
   box-sizing: border-box; //Added this trying to fix mobile side gap ( to possibly adjust for padding).
   z-index: 999;

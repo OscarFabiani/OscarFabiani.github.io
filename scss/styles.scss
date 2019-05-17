@@ -11,10 +11,12 @@ $color5: #e4f1fe;
 html {
   font-family: 'Alegreya Sans', sans-serif;
   font-size: 20px;
+  width: 100%; //added for gap issue
 }
 body {
   margin: 0;
   padding: 0;
+  width: 100%; //added for gap issue
 }
 h1, h2, h3, h4, h5, h6, p, ul {
   margin: 0;
@@ -89,6 +91,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   justify-content: space-between;
   position: fixed;
   top: 0;
+  left: 0; //added for gap issue
   box-shadow: 0 -.1em 4px -1px $color3 inset;
   height: 2.25em; //Added this trying to fix nav scrunch on mobile
   width: 100%;
@@ -190,6 +193,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: relative;
   @extend %flex-centered;
   height: 100vh;
+  width: 100%; //added for gap issue
   background-blend-mode: multiply;
   background-color: $color2;
   background-image: url(/assets/gplay.png);
@@ -449,6 +453,9 @@ h1, h2, h3, h4, h5, h6, p, ul {
       .linkedin-icon {
         font-size: 1.2em;
       }
+      .resume-icon {
+        font-size: 1.1em;
+      }
     }
     a.contact-link {
       margin-left: 1em;
@@ -568,4 +575,3 @@ footer {
 
 /*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
 /*FIX SIDE GAP ON MY PHONE*/
-/*ADD RESUME LINK(S)*/

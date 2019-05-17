@@ -191,6 +191,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       padding-left: .5em; }
     #about-section .about-text p.summary {
       margin: 0 1em 3em 1em;
+      width: 80%;
       font-size: 1.3em;
       line-height: 1.5em; }
     #about-section .about-text h1.skills {
@@ -407,6 +408,3 @@ footer {
     font-size: .8em; }
   footer a.scroll-up-link {
     font-size: 1.2em; } }
-
-/*FIX MENU SCRUCHING WHILE SCROLLING ON MY PHONE*/
-/*FIX SIDE GAP ON MY PHONE*/

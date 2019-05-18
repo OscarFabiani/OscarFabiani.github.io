@@ -9,4 +9,4 @@ A website serving as a portfolio for my work.
 
 <a href="https://oscarfabiani.com/">View Live Demo</a>
 
-<a href="https://oscarfabiani.com/"><img src="https://oscarfabiani.com/assets/macronutrient-calculator-screenshot.png" title="MPersonal Portfolio Website" alt="Personal Portfolio Website"></a>
+<a href="https://oscarfabiani.com/"><img src="https://oscarfabiani.com/assets/personal-portfolio-website-screenshot.png" title="Personal Portfolio Website" alt="Personal Portfolio Website"></a>

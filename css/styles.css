@@ -198,8 +198,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
     #about-section .about-text h1.skills {
       margin-bottom: 1em; }
     #about-section .about-text ul {
-      columns: 3;
-      -moz-columns: 3;
+      columns: 4;
+      -moz-columns: 4;
       margin: 0 3em 0 5em; }
       #about-section .about-text ul li {
         margin-bottom: 1em;

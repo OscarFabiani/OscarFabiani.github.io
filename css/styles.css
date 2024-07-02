@@ -208,8 +208,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         font-weight: bold; }
       #about-section .about-text ul .bullet {
         margin-right: .5em;
-        color: #008080;
-        color: forestgreen; }
+        color: #2f4f4f; }
       #about-section .about-text ul .skill {
         justify-content: flex-start;
         height: 2em;

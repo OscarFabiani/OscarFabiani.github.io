@@ -274,8 +274,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
       margin-bottom: 1em;
     }
     ul {
-      columns: 3;
-      -moz-columns: 3; //Needed for Firefox
+      columns: 4;
+      -moz-columns: 4; //Needed for Firefox
       margin: 0 3em 0 5em;
       li {
         @extend %flex-centered;

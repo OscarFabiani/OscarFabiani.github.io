@@ -286,8 +286,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       }
       .bullet {
         margin-right: .5em;
-        color: $color2;
-        color: forestgreen;
+        color: #2f4f4f;
       }
       .skill {
         @extend %flex-centered;

@@ -372,6 +372,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         padding: 0 .5em;
         box-sizing: border-box; //Needed for padding to work with width: 100%
         text-align: center;
+        color: #000000;
       }
       .project-buttons {
         @extend %flex-centered;

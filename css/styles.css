@@ -275,7 +275,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
         width: 100%;
         padding: 0 .5em;
         box-sizing: border-box;
-        text-align: center; }
+        text-align: center;
+        color: #000000 }
       #project-section .projects .project .project-buttons {
         justify-content: space-around;
         margin-bottom: .5em;

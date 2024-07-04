@@ -92,7 +92,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   position: fixed;
   top: 0;
   box-shadow: 0 -.1em 4px -1px $color3 inset;
-  height: 2.25em; //Added this trying to fix nav scrunch on mobile
+  height: 2.5em; //Added this trying to fix nav scrunch on mobile
   width: 100%;
   background: $color4;
   box-sizing: border-box; //Added this trying to fix mobile side gap ( to possibly adjust for padding).
@@ -140,9 +140,6 @@ h1, h2, h3, h4, h5, h6, p, ul {
         &:hover {
           border-bottom: 2px solid;
         }
-      }
-      &.about-link, &.project-link {
-        border-right: 1px solid black;
       }
     }
   }

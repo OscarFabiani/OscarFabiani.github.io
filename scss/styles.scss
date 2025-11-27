@@ -310,7 +310,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
   .projects {
     @extend %flex-centered;
     flex-wrap: wrap;
-    max-width: 53em; /*prevents more than 3 rows on wider screen sizes*/
+    max-width: 1200px; /*prevents more than 3 rows on wider screen sizes*/
     width: 100%; //Needed for flex-wrap for IE;
     margin-bottom: 3em;
     .project {
@@ -318,7 +318,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       @extend %flex-centered;
       flex-direction: column;
       justify-content: flex-start;
-      margin: 0 .5em 1em .5em;
+      margin: 0 1.5em 3em;
       border: .2em solid $color3;
       border-radius: .5em;
       box-shadow: 0 0 .5em .1em rgba(255, 255, 255, 0.3);
@@ -335,8 +335,8 @@ h1, h2, h3, h4, h5, h6, p, ul {
         justify-content: flex-start;
         flex-direction: column;
         position: absolute;
-        left: 0; //Needed for FIrefox
-        top: 0; //Needed for FIrefox
+        left: 0; //Needed for Firefox
+        top: 0; //Needed for Firefox
         border-top-right-radius: .3em;
         border-top-left-radius: .3em;
         height: 10em;
@@ -352,7 +352,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
         }
       }
       img.project-image {
-        margin-bottom: .5em;
+        margin-bottom: 1em;
         border-top-right-radius: .3em;
         border-top-left-radius: .3em;
         border-bottom: .2em solid $color3;
@@ -374,7 +374,7 @@ h1, h2, h3, h4, h5, h6, p, ul {
       .project-buttons {
         @extend %flex-centered;
         justify-content: space-around;
-        margin-bottom: .5em;
+        margin-bottom: 1em;
         width: 100%;
         a.project-link {
           position: relative; //Needed for tooltip for Firefox 
